@@ -25,6 +25,12 @@
         <activity
             android:name=".RankActivity"
             android:exported="false" />
+        <activity
+            android:name=".RecordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecordScoreActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

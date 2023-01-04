@@ -1,2 +1,2 @@
 # ScoreBoard-Android
-스코어보드 어플리케이션을 위한
+스코어보드 어플리케이션을 위한 android project

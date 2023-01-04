@@ -29,6 +29,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        ImageView record_btn = (ImageView) findViewById(R.id.show_record_button);
+        record_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), RecordActivity.class);
+                startActivityResult.launch(intent);
+            }
+        });
+
+        ImageView record_score_btn = (ImageView) findViewById(R.id.record_match_button);
+        record_score_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), RecordScoreActivity.class);
+                startActivityResult.launch(intent);
+            }
+        });
+
     }
 
     ActivityResultLauncher<Intent> startActivityResult = registerForActivityResult(
