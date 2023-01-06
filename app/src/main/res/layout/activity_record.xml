@@ -16,8 +16,7 @@
             android:layout_height="76dp"
             android:layout_marginLeft="340dp"
             android:layout_marginTop="125dp"
-            android:src="@drawable/record_game_index"
-            android:visibility="visible" />
+            android:background="@drawable/record_game_pressed_index" />
 
         <ImageButton
             android:id="@+id/index_user"
@@ -25,8 +24,7 @@
             android:layout_height="76dp"
             android:layout_marginLeft="340dp"
             android:layout_marginTop="205dp"
-            android:src="@drawable/record_user_index"
-            android:visibility="visible" />
+            android:background="@drawable/record_user_index" />
 
         <ImageButton
             android:id="@+id/index_score"
@@ -34,8 +32,7 @@
             android:layout_height="76dp"
             android:layout_marginLeft="340dp"
             android:layout_marginTop="285dp"
-            android:src="@drawable/record_score_index"
-            android:visibility="visible" />
+            android:background="@drawable/record_score_index" />
 
         <ImageView
             android:layout_width="411dp"

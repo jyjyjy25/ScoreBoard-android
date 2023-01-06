@@ -1,16 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#D5D8D0"
     android:orientation="vertical">
 
-    <ImageView
-        android:layout_width="392dp"
-        android:layout_height="630dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        android:src="@drawable/show_rank_background" />
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:layout_width="392dp"
+            android:layout_height="630dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/show_rank_background" />
+
+        <View
+            android:id="@+id/rank_recycler_view_index"
+            android:layout_width="335dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="-180dp"
+            android:background="@drawable/list_background"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rank_recycler_view"
+            android:layout_width="335dp"
+            android:layout_height="480dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="85dp"/>
+
+    </FrameLayout>
+
 
 </LinearLayout>
