@@ -17,17 +17,82 @@
             android:layout_marginTop="30dp"
             android:src="@drawable/show_rank_background" />
 
-        <View
+        <LinearLayout
             android:id="@+id/rank_recycler_view_index"
-            android:layout_width="335dp"
+            android:layout_width="320dp"
             android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="-180dp"
-            android:background="@drawable/list_background"/>
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="120dp"
+            android:orientation="horizontal"
+            android:background="@drawable/list_background">
+
+            <TextView
+                android:id="@+id/ranking"
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="7dp"
+                android:gravity="center"
+                android:text="순위"
+                android:textColor="#255950"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Name"
+                android:textColor="#ffffff"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/user_age"
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Age"
+                android:textColor="#ffffff"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/user_gender"
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Gender"
+                android:textColor="#ffffff"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/win_num"
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Win"
+                android:textColor="#ffffff"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/lose_num"
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:layout_marginRight="15dp"
+                android:gravity="center"
+                android:text="Lose"
+                android:textColor="#ffffff"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rank_recycler_view"
-            android:layout_width="335dp"
+            android:layout_width="320dp"
             android:layout_height="480dp"
             android:layout_gravity="center"
             android:layout_marginTop="85dp"/>

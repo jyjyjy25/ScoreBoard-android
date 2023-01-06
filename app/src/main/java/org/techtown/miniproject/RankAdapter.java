@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class RankAdapter extends RecyclerView.Adapter<RankAdapter.ViewHolder> {
     Context context;
     ArrayList<RankItem> items = new ArrayList<RankItem>();
-    TextView user_name, user_age, user_gender, win_num, lose_num;
+    TextView ranking, user_name, user_age, user_gender, win_num, lose_num;
 
     public RankAdapter(Context context) {
         this.context = context;
@@ -57,6 +57,7 @@ public class RankAdapter extends RecyclerView.Adapter<RankAdapter.ViewHolder> {
         public ViewHolder(View itemView) {
             super(itemView) ;
 
+            ranking = itemView.findViewById(R.id.ranking);
             user_name = itemView.findViewById(R.id.user_name) ;
             user_age = itemView.findViewById(R.id.user_age) ;
             user_gender = itemView.findViewById(R.id.user_gender) ;
@@ -65,6 +66,7 @@ public class RankAdapter extends RecyclerView.Adapter<RankAdapter.ViewHolder> {
         }
 
         public void setItem(RankItem item) {
+            ranking.setText(item.getRanking());
             user_name.setText(item.getUser_name());
             user_age.setText(String.valueOf(item.getUser_age()));
             user_gender.setText(item.getUser_gender());
