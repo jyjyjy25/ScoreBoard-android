@@ -8,44 +8,44 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent">
 
         <ImageButton
             android:id="@+id/index_game"
             android:layout_width="50dp"
             android:layout_height="76dp"
-            android:layout_marginTop="125dp"
             android:layout_marginLeft="340dp"
-            android:src="@drawable/record_game_index"/>
+            android:layout_marginTop="125dp"
+            android:src="@drawable/record_game_index"
+            android:visibility="visible" />
 
         <ImageButton
             android:id="@+id/index_user"
             android:layout_width="50dp"
             android:layout_height="76dp"
-            android:layout_marginTop="205dp"
             android:layout_marginLeft="340dp"
-            android:src="@drawable/record_user_index"/>
+            android:layout_marginTop="205dp"
+            android:src="@drawable/record_user_index"
+            android:visibility="visible" />
 
         <ImageButton
             android:id="@+id/index_score"
             android:layout_width="50dp"
             android:layout_height="76dp"
-            android:layout_marginTop="285dp"
             android:layout_marginLeft="340dp"
-            android:src="@drawable/record_score_index"/>
+            android:layout_marginTop="285dp"
+            android:src="@drawable/record_score_index"
+            android:visibility="visible" />
 
         <ImageView
             android:layout_width="411dp"
             android:layout_height="631dp"
-            android:layout_marginTop="30dp"
             android:layout_marginLeft="-20dp"
+            android:layout_marginTop="30dp"
             android:src="@drawable/show_record_background"
             android:visibility="visible" />
 
-
-        
     </FrameLayout>
-
 
 
 </LinearLayout>
