@@ -2,7 +2,9 @@ package org.techtown.miniproject;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.DatePicker;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,5 +21,8 @@ public class RecordScoreActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+
+
     }
 }

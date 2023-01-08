@@ -5,12 +5,132 @@
     android:background="#D5D8D0"
     android:orientation="vertical">
 
-    <ImageView
-        android:layout_width="365dp"
-        android:layout_height="600dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        android:src="@drawable/record_score_background" />
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:layout_width="365dp"
+            android:layout_height="600dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/record_score_background" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="130dp"
+            android:layout_marginLeft="35dp"
+            android:text="대결 날짜" />
+
+        <DatePicker
+            android:id="@+id/datePicker"
+            android:layout_width="320dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="150dp"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner" />
+
+        <TextView
+            android:id="@+id/game"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="220dp"
+            android:layout_marginLeft="35dp"
+            android:text="게임 정보" />
+
+        <EditText
+            android:id="@+id/game_event"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="245dp"
+            android:layout_marginLeft="35dp"
+            android:ems="17"
+            android:inputType="textPersonName"
+            android:hint="종목을 입력해 주세요"
+            android:textSize="14dp"
+            android:backgroundTint="#7B9565"/>
+
+        <EditText
+            android:id="@+id/game_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="278dp"
+            android:layout_marginLeft="35dp"
+            android:ems="17"
+            android:inputType="textPersonName"
+            android:hint="이름을 입력해 주세요"
+            android:textSize="14dp"
+            android:backgroundTint="#7B9565"/>
+
+        <TextView
+            android:id="@+id/user1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="333dp"
+            android:layout_marginLeft="35dp"
+            android:text="유저1 정보" />
+
+        <EditText
+            android:id="@+id/user1_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="358dp"
+            android:layout_marginLeft="35dp"
+            android:ems="17"
+            android:inputType="textPersonName"
+            android:hint="이름을 입력해 주세요"
+            android:textSize="14dp"
+            android:backgroundTint="#7B9565"/>
+
+        <EditText
+            android:id="@+id/user1_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="391dp"
+            android:layout_marginLeft="35dp"
+            android:ems="17"
+            android:inputType="textPersonName"
+            android:hint="점수를 입력해 주세요"
+            android:textSize="14dp"
+            android:backgroundTint="#7B9565"/>
+
+        <TextView
+            android:id="@+id/user2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="446dp"
+            android:layout_marginLeft="35dp"
+            android:text="유저2 정보" />
+
+        <EditText
+            android:id="@+id/user2_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="471dp"
+            android:layout_marginLeft="35dp"
+            android:ems="17"
+            android:inputType="textPersonName"
+            android:hint="이름을 입력해 주세요"
+            android:textSize="14dp"
+            android:backgroundTint="#7B9565"/>
+
+        <EditText
+            android:id="@+id/user2_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="504dp"
+            android:layout_marginLeft="35dp"
+            android:ems="17"
+            android:inputType="textPersonName"
+            android:hint="점수를 입력해 주세요"
+            android:textSize="14dp"
+            android:backgroundTint="#7B9565"/>
+
+    </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -34,7 +154,6 @@
             android:src="@drawable/enter_button" />
 
     </LinearLayout>
-
 
 
 </LinearLayout>
