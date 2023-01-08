@@ -42,6 +42,30 @@
             android:src="@drawable/show_record_background"
             android:visibility="visible" />
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/game_recycler_view"
+            android:layout_width="320dp"
+            android:layout_height="480dp"
+            android:layout_gravity="center"
+            android:visibility="visible"
+            android:layout_marginTop="50dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/user_recycler_view"
+            android:layout_width="320dp"
+            android:layout_height="480dp"
+            android:layout_gravity="center"
+            android:visibility="invisible"
+            android:layout_marginTop="50dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/score_recycler_view"
+            android:layout_width="320dp"
+            android:layout_height="480dp"
+            android:layout_gravity="center"
+            android:visibility="invisible"
+            android:layout_marginTop="50dp"/>
+
     </FrameLayout>
 
 
