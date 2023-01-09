@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D5D8D0"
+    android:background="#D7DED7"
     android:orientation="vertical">
 
     <FrameLayout
@@ -11,10 +11,10 @@
         android:layout_gravity="center">
 
         <ImageView
-            android:layout_width="365dp"
-            android:layout_height="580dp"
+            android:layout_width="400dp"
+            android:layout_height="570dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="25dp"
             android:src="@drawable/record_score_background" />
 
         <TextView
@@ -22,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="130dp"
-            android:layout_marginLeft="35dp"
+            android:layout_marginLeft="55dp"
             android:text="대결 날짜" />
 
         <DatePicker
@@ -39,7 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="220dp"
-            android:layout_marginLeft="35dp"
+            android:layout_marginLeft="55dp"
             android:text="게임 정보" />
 
         <EditText
@@ -47,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="245dp"
-            android:layout_marginLeft="35dp"
+            android:layout_marginLeft="55dp"
             android:ems="17"
             android:inputType="textPersonName"
             android:hint="종목을 입력해 주세요"
@@ -59,7 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="278dp"
-            android:layout_marginLeft="35dp"
+            android:layout_marginLeft="55dp"
             android:ems="17"
             android:inputType="textPersonName"
             android:hint="이름을 입력해 주세요"
@@ -71,7 +71,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="333dp"
-            android:layout_marginLeft="35dp"
+            android:layout_marginLeft="55dp"
             android:text="유저1 정보" />
 
         <EditText
@@ -79,7 +79,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="358dp"
-            android:layout_marginLeft="35dp"
+            android:layout_marginLeft="55dp"
             android:ems="17"
             android:inputType="textPersonName"
             android:hint="이름을 입력해 주세요"
@@ -91,7 +91,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="391dp"
-            android:layout_marginLeft="35dp"
+            android:layout_marginLeft="55dp"
             android:ems="17"
             android:inputType="textPersonName"
             android:hint="점수를 입력해 주세요"
@@ -103,7 +103,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="446dp"
-            android:layout_marginLeft="35dp"
+            android:layout_marginLeft="55dp"
             android:text="유저2 정보" />
 
         <EditText
@@ -111,7 +111,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="471dp"
-            android:layout_marginLeft="35dp"
+            android:layout_marginLeft="55dp"
             android:ems="17"
             android:inputType="textPersonName"
             android:hint="이름을 입력해 주세요"
@@ -123,7 +123,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="504dp"
-            android:layout_marginLeft="35dp"
+            android:layout_marginLeft="55dp"
             android:ems="17"
             android:inputType="textPersonName"
             android:hint="점수를 입력해 주세요"
@@ -135,7 +135,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
         <ImageView

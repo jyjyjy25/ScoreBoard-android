@@ -8,15 +8,13 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_gravity="center_horizontal"
-        android:orientation="horizontal"
-        android:background="@drawable/list_background">
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/ranking"
             android:layout_width="30dp"
             android:layout_height="40dp"
-            android:layout_weight="1"
-            android:layout_marginLeft="7dp"
+            android:layout_weight="2"
             android:gravity="center"
             android:text="1위"
             android:textColor="#255950"
@@ -26,10 +24,10 @@
             android:id="@+id/user_name"
             android:layout_width="30dp"
             android:layout_height="40dp"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:gravity="center"
             android:text="Gabe"
-            android:textColor="#ffffff"
+            android:textColor="#699565"
             android:textStyle="bold"/>
 
         <TextView
@@ -39,17 +37,17 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="30"
-            android:textColor="#ffffff"
+            android:textColor="#699565"
             android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/user_gender"
             android:layout_width="30dp"
             android:layout_height="40dp"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:gravity="center"
             android:text="♂"
-            android:textColor="#ffffff"
+            android:textColor="#699565"
             android:textStyle="bold"/>
 
         <TextView
@@ -59,7 +57,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="3"
-            android:textColor="#ffffff"
+            android:textColor="#699565"
             android:textStyle="bold"/>
 
         <TextView
@@ -67,16 +65,16 @@
             android:layout_width="30dp"
             android:layout_height="40dp"
             android:layout_weight="1"
-            android:layout_marginRight="15dp"
             android:gravity="center"
             android:text="1"
-            android:textColor="#ffffff"
+            android:textColor="#699565"
             android:textStyle="bold"/>
 
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="5dp" />
+        android:layout_height="2dp"
+        android:background="@drawable/separator"/>
 
 </LinearLayout>
