@@ -2,14 +2,14 @@ package org.techtown.miniproject;
 
 public class RankItem {
 
-    String ranking;
+    int ranking;
     String user_name;
     int user_age;
     String user_gender;
     int win_num;
     int lose_num;
 
-    public RankItem(String ranking, String user_name, int user_age, String user_gender, int win_num, int lose_num) {
+    public RankItem(int ranking, String user_name, int user_age, String user_gender, int win_num, int lose_num) {
         this.ranking = ranking;
         this.user_name = user_name;
         this.user_age = user_age;
@@ -18,11 +18,11 @@ public class RankItem {
         this.lose_num = lose_num;
     }
 
-    public String getRanking() {
+    public int getRanking() {
         return ranking;
     }
 
-    public void setRanking(String ranking) {
+    public void setRanking(int ranking) {
         this.ranking = ranking;
     }
 

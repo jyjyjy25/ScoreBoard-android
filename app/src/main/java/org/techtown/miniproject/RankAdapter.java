@@ -66,7 +66,7 @@ public class RankAdapter extends RecyclerView.Adapter<RankAdapter.ViewHolder> {
         }
 
         public void setItem(RankItem item) {
-            ranking.setText(item.getRanking());
+            ranking.setText(String.valueOf(item.getRanking()));
             user_name.setText(item.getUser_name());
             user_age.setText(String.valueOf(item.getUser_age()));
             user_gender.setText(item.getUser_gender());

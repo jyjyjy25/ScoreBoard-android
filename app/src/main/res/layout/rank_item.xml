@@ -49,7 +49,6 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="♂"
-            android:textSize="18dp"
             android:textColor="#ffffff"
             android:textStyle="bold"/>
 

@@ -33,7 +33,7 @@
                 android:layout_weight="1"
                 android:layout_marginLeft="7dp"
                 android:gravity="center"
-                android:text="순위"
+                android:text="Rank"
                 android:textColor="#255950"
                 android:textStyle="bold"/>
 
@@ -44,7 +44,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="Name"
-                android:textColor="#ffffff"
+                android:textColor="#255950"
                 android:textStyle="bold"/>
 
             <TextView
@@ -54,7 +54,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="Age"
-                android:textColor="#ffffff"
+                android:textColor="#255950"
                 android:textStyle="bold"/>
 
             <TextView
@@ -64,7 +64,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="Gender"
-                android:textColor="#ffffff"
+                android:textColor="#255950"
                 android:textStyle="bold"/>
 
             <TextView
@@ -74,7 +74,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="Win"
-                android:textColor="#ffffff"
+                android:textColor="#255950"
                 android:textStyle="bold"/>
 
             <TextView
@@ -85,7 +85,7 @@
                 android:layout_marginRight="15dp"
                 android:gravity="center"
                 android:text="Lose"
-                android:textColor="#ffffff"
+                android:textColor="#255950"
                 android:textStyle="bold"/>
 
         </LinearLayout>

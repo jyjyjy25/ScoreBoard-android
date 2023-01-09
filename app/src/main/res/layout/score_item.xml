@@ -15,7 +15,7 @@
             android:id="@+id/match_date"
             android:layout_width="30dp"
             android:layout_height="40dp"
-            android:layout_weight="3"
+            android:layout_weight="4"
             android:layout_marginLeft="7dp"
             android:gravity="center"
             android:text="2022-10-28"

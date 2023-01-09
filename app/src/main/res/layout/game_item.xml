@@ -19,7 +19,7 @@
             android:layout_marginLeft="7dp"
             android:gravity="center"
             android:text="배구"
-            android:textColor="#255950"
+            android:textColor="#ffffff"
             android:textStyle="bold"/>
 
         <TextView
