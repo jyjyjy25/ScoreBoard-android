@@ -119,8 +119,8 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="4dp"
-                android:background="@drawable/separator"/>
+                android:layout_height="2dp"
+                android:background="@drawable/index_separator"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/game_recycler_view"
@@ -199,8 +199,8 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="4dp"
-                android:background="@drawable/separator"/>
+                android:layout_height="2dp"
+                android:background="@drawable/index_separator"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/user_recycler_view"
@@ -212,7 +212,7 @@
 
         <LinearLayout
             android:id="@+id/score_layout"
-            android:layout_width="340dp"
+            android:layout_width="337dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:orientation="vertical"
@@ -279,8 +279,8 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="4dp"
-                android:background="@drawable/separator"/>
+                android:layout_height="2dp"
+                android:background="@drawable/index_separator"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/score_recycler_view"

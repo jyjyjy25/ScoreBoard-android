@@ -17,8 +17,7 @@
             android:layout_weight="2"
             android:gravity="center"
             android:text="Gabe"
-            android:textColor="#699565"
-            android:textStyle="bold"/>
+            android:textColor="#255950"/>
 
         <TextView
             android:id="@+id/user_age"
@@ -27,8 +26,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="30"
-            android:textColor="#699565"
-            android:textStyle="bold"/>
+            android:textColor="#255950"/>
 
         <TextView
             android:id="@+id/user_gender"
@@ -37,8 +35,7 @@
             android:layout_weight="2"
             android:gravity="center"
             android:text="Male"
-            android:textColor="#699565"
-            android:textStyle="bold"/>
+            android:textColor="#255950"/>
 
         <TextView
             android:id="@+id/win_num"
@@ -47,8 +44,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="3"
-            android:textColor="#699565"
-            android:textStyle="bold"/>
+            android:textColor="#255950"/>
 
         <TextView
             android:id="@+id/lose_num"
@@ -57,14 +53,13 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="1"
-            android:textColor="#699565"
-            android:textStyle="bold"/>
+            android:textColor="#255950"/>
 
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="2dp"
+        android:layout_height="1dp"
         android:background="@drawable/separator"/>
 
 </LinearLayout>
