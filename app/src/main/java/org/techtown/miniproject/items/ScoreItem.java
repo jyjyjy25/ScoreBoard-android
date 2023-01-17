@@ -1,4 +1,4 @@
-package org.techtown.miniproject;
+package org.techtown.miniproject.items;
 
 public class ScoreItem {
 

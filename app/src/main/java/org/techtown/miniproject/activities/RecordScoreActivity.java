@@ -1,4 +1,4 @@
-package org.techtown.miniproject;
+package org.techtown.miniproject.activities;
 
 import android.os.Bundle;
 import android.view.View;
@@ -7,6 +7,8 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import org.techtown.miniproject.R;
 
 public class RecordScoreActivity extends AppCompatActivity {
 
@@ -21,8 +23,6 @@ public class RecordScoreActivity extends AppCompatActivity {
                 finish();
             }
         });
-
-
 
     }
 }

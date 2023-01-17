@@ -21,10 +21,12 @@
         <entry key="..\:/Users/JYKIM/AndroidStudioProjects/MiniProject/app/src/main/res/drawable/strings.xml" value="0.2245" />
         <entry key="..\:/Users/JYKIM/AndroidStudioProjects/MiniProject/app/src/main/res/drawable/styles.xml" value="0.2245" />
         <entry key="..\:/Users/JYKIM/AndroidStudioProjects/MiniProject/app/src/main/res/drawable/title_separator.xml" value="0.2925" />
-        <entry key="..\:/Users/JYKIM/AndroidStudioProjects/MiniProject/app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="..\:/Users/JYKIM/AndroidStudioProjects/MiniProject/app/src/main/res/layout/activities/activity_main.xml" value="0.55" />
+        <entry key="..\:/Users/JYKIM/AndroidStudioProjects/MiniProject/app/src/main/res/layout/activity_info.xml" value="0.55" />
+        <entry key="..\:/Users/JYKIM/AndroidStudioProjects/MiniProject/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/JYKIM/AndroidStudioProjects/MiniProject/app/src/main/res/layout/activity_rank.xml" value="0.4466666666666667" />
         <entry key="..\:/Users/JYKIM/AndroidStudioProjects/MiniProject/app/src/main/res/layout/activity_record.xml" value="0.5" />
-        <entry key="..\:/Users/JYKIM/AndroidStudioProjects/MiniProject/app/src/main/res/layout/activity_record_score.xml" value="0.1" />
+        <entry key="..\:/Users/JYKIM/AndroidStudioProjects/MiniProject/app/src/main/res/layout/activity_record_score.xml" value="0.4466666666666667" />
         <entry key="..\:/Users/JYKIM/AndroidStudioProjects/MiniProject/app/src/main/res/layout/game_item.xml" value="0.4125" />
         <entry key="..\:/Users/JYKIM/AndroidStudioProjects/MiniProject/app/src/main/res/layout/rank_item.xml" value="0.4466666666666667" />
         <entry key="..\:/Users/JYKIM/AndroidStudioProjects/MiniProject/app/src/main/res/layout/rank_recycler_item_view.xml" value="0.22" />

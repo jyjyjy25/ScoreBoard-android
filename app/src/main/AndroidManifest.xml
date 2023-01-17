@@ -14,7 +14,7 @@
         android:theme="@style/Theme.MiniProject"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
@@ -23,15 +23,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".RankActivity"
+            android:name=".activities.InfoActivity"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name=".RecordActivity"
+            android:name=".activities.RankActivity"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name=".RecordScoreActivity"
+            android:name=".activities.RecordActivity"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".activities.RecordScoreActivity"
             android:screenOrientation="portrait"
             android:exported="false" />
     </application>

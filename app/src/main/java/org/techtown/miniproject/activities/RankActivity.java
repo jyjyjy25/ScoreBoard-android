@@ -1,4 +1,4 @@
-package org.techtown.miniproject;
+package org.techtown.miniproject.activities;
 
 import android.os.Bundle;
 
@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
+import org.techtown.miniproject.R;
+import org.techtown.miniproject.adapters.RankAdapter;
+import org.techtown.miniproject.items.RankItem;
 
 public class RankActivity extends AppCompatActivity {
 

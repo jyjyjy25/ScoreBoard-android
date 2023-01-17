@@ -1,4 +1,4 @@
-package org.techtown.miniproject;
+package org.techtown.miniproject.activities;
 
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +8,14 @@ import android.widget.LinearLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import org.techtown.miniproject.adapters.GameAdapter;
+import org.techtown.miniproject.items.GameItem;
+import org.techtown.miniproject.R;
+import org.techtown.miniproject.adapters.ScoreAdapter;
+import org.techtown.miniproject.items.ScoreItem;
+import org.techtown.miniproject.adapters.UserAdapter;
+import org.techtown.miniproject.items.UserItem;
 
 public class RecordActivity extends AppCompatActivity {
     boolean game_index_state = true;

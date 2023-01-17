@@ -1,4 +1,4 @@
-package org.techtown.miniproject;
+package org.techtown.miniproject.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import org.techtown.miniproject.R;
+import org.techtown.miniproject.items.UserItem;
 
 import java.util.ArrayList;
 

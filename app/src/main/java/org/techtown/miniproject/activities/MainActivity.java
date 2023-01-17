@@ -1,4 +1,4 @@
-package org.techtown.miniproject;
+package org.techtown.miniproject.activities;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -8,10 +8,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
+
+import org.techtown.miniproject.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,6 +21,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ImageView info_btn = (ImageView) findViewById(R.id.show_info_button);
+        info_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), InfoActivity.class);
+                startActivityResult.launch(intent);
+            }
+        });
 
         ImageView rank_btn = (ImageView) findViewById(R.id.show_rank_button);
         rank_btn.setOnClickListener(new View.OnClickListener() {
@@ -46,8 +57,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivityResult.launch(intent);
             }
         });
-
-
 
     }
 
