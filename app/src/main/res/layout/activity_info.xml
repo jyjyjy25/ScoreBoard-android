@@ -4,30 +4,62 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabs"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:elevation="1dp"
-        android:background="@android:color/background_light" />
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <ImageButton
+            android:id="@+id/index_game"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/game_pressed_btn" />
+
+        <ImageButton
+            android:id="@+id/index_user"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/user_btn" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+<!--    <com.google.android.material.tabs.TabLayout-->
+<!--        android:id="@+id/tabs"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:elevation="1dp"-->
+<!--        android:background="@android:color/background_light" />-->
 
     <FrameLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:background="@drawable/record_background">
 
-        <fragment
-            android:id="@+id/fragment_game"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:name="org.techtown.miniproject.GameFragment"/>
+<!--        <fragment-->
+<!--            android:id="@+id/fragment_game"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:name="org.techtown.miniproject.GameFragment"/>-->
 
-        <fragment
-            android:id="@+id/fragment_user"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:name="org.techtown.miniproject.UserFragment"/>
+<!--        <fragment-->
+<!--            android:id="@+id/fragment_user"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:name="org.techtown.miniproject.UserFragment"/>-->
 
 
     </FrameLayout>
