@@ -21,8 +21,6 @@ public class RecordActivity extends AppCompatActivity {
     boolean game_index_state = true;
     boolean user_index_state = false;
     boolean score_index_state = false;
-    RecyclerView game_recycler_view;
-    RecyclerView user_recycler_view;
     RecyclerView score_recycler_view;
     LinearLayout game_layout, user_layout, score_layout;
 
@@ -104,27 +102,9 @@ public class RecordActivity extends AppCompatActivity {
             }
         });
 
-        game_recycler_view = (RecyclerView) findViewById(R.id.game_recycler_view);
-        LinearLayoutManager game_layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        game_recycler_view.setLayoutManager(game_layoutManager);
-        GameAdapter game_adapter = new GameAdapter(getApplicationContext());
 
-        game_adapter.addItem(new GameItem("배구", "구기종목", 3));
-        game_adapter.addItem(new GameItem("컬링", "동계종목", 9));
-        game_adapter.addItem(new GameItem("허들", "육상종목", 4));
 
-        game_recycler_view.setAdapter(game_adapter);
 
-        user_recycler_view = (RecyclerView) findViewById(R.id.user_recycler_view);
-        LinearLayoutManager user_layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        user_recycler_view.setLayoutManager(user_layoutManager);
-        UserAdapter user_adapter = new UserAdapter(getApplicationContext());
-
-        user_adapter.addItem(new UserItem("Gabe", 31, "Male", 4, 0));
-        user_adapter.addItem(new UserItem("June", 30, "Male", 0, 4));
-        user_adapter.addItem(new UserItem("Julia", 23, "Female", 2, 2));
-
-        user_recycler_view.setAdapter(user_adapter);
 
         score_recycler_view = (RecyclerView) findViewById(R.id.score_recycler_view);
         LinearLayoutManager score_layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
