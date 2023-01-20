@@ -29,8 +29,8 @@ public class RecordActivity extends AppCompatActivity {
         score_recycler_view.setLayoutManager(score_layoutManager);
         ScoreAdapter score_adapter = new ScoreAdapter(getApplicationContext());
 
-        score_adapter.addItem(new ScoreItem(2022, "10/18", "Gabe", "June", 4, 0));
-        score_adapter.addItem(new ScoreItem(2022, "10/20", "Nowee", "Ann", 3, 1));
+        score_adapter.addItem(new ScoreItem("2022/10/18", "가위바위보", "Gabe", "June", 4, 0));
+        score_adapter.addItem(new ScoreItem("2022/11/21", "탁구", "Nowee", "Ann", 3, 1));
 
         score_recycler_view.setAdapter(score_adapter);
 

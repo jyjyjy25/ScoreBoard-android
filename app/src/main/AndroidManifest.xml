@@ -35,8 +35,18 @@
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name=".activities.RecordScoreActivity"
+            android:name=".activities.NewscoreDateActivity"
             android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".activities.NewscoreGameActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="false" />
+        <activity
+            android:name=".activities.NewscoreUserActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
             android:exported="false" />
     </application>
 

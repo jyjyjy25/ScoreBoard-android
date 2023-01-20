@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/newscore_title"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@drawable/title_separator"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="유저 정보를 입력해 주세요"
+            android:textStyle="bold"
+            android:textColor="#222222"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="대결을 함께한 유저의 정보를 입력하시면 됩니다."
+            android:textColor="#666666"
+            android:textSize="13dp"/>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="유저1"
+            android:textColor="#999999"
+            android:textSize="18dp"/>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="7dp"
+            android:background="@drawable/separator"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:text="유저1 이름"
+                android:textColor="#808080"
+                android:textSize="15dp"/>
+
+            <android.widget.Button
+                android:id="@+id/user1_name"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:padding="10dp"
+                android:drawableRight="@drawable/arrow_resize"
+                android:background="@drawable/edittext_round_corner_rectangle"
+                android:text="이름"
+                android:textAlignment="viewStart"
+                android:textColor="#999999"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:text="유저1 점수"
+                android:textColor="#808080"
+                android:textSize="15dp" />
+
+            <EditText
+                android:id="@+id/user1_score"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="20dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="점수"
+                android:textSize="14dp"
+                android:textColor="#999999"
+                android:background="@drawable/edittext_round_corner_rectangle"/>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="유저2"
+            android:textColor="#999999"
+            android:textSize="18dp"/>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="7dp"
+            android:background="@drawable/separator"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:text="유저2 이름"
+                android:textColor="#808080"
+                android:textSize="15dp"/>
+
+            <android.widget.Button
+                android:id="@+id/user2_name"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:padding="10dp"
+                android:drawableRight="@drawable/arrow_resize"
+                android:background="@drawable/edittext_round_corner_rectangle"
+                android:text="이름"
+                android:textAlignment="viewStart"
+                android:textColor="#999999"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:text="유저2 점수"
+                android:textColor="#808080"
+                android:textSize="15dp"/>
+
+            <EditText
+                android:id="@+id/user2_score"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="20dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="점수"
+                android:textSize="14dp"
+                android:textColor="#999999"
+                android:background="@drawable/edittext_round_corner_rectangle"/>
+
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <android.widget.Button
+            android:id="@+id/save_button"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/next_button_background"
+            android:text="저장"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

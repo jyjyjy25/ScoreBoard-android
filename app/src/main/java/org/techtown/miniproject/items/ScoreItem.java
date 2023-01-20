@@ -2,36 +2,36 @@ package org.techtown.miniproject.items;
 
 public class ScoreItem {
 
-    int match_date_year;
-    String match_date_monthANDday;
+    String match_date;
+    String game_name;
     String user1_name;
     String user2_name;
     int user1_score;
     int user2_score;
 
-    public ScoreItem(int match_date_year, String match_date_monthANDday, String user1_name, String user2_name, int user1_score, int user2_score) {
-        this.match_date_year = match_date_year;
-        this.match_date_monthANDday = match_date_monthANDday;
+    public ScoreItem(String match_date, String game_name, String user1_name, String user2_name, int user1_score, int user2_score) {
+        this.match_date = match_date;
+        this.game_name = game_name;
         this.user1_name = user1_name;
         this.user2_name = user2_name;
         this.user1_score = user1_score;
         this.user2_score = user2_score;
     }
 
-    public int getMatch_date_year() {
-        return match_date_year;
+    public String getMatch_date() {
+        return match_date;
     }
 
-    public void setMatch_date_year(int match_date_year) {
-        this.match_date_year = match_date_year;
+    public void setMatch_date(String match_date) {
+        this.match_date = match_date;
     }
 
-    public String getMatch_date_monthANDday() {
-        return match_date_monthANDday;
+    public String getGame_name() {
+        return game_name;
     }
 
-    public void setMatch_date_monthANDday(String match_date_monthANDday) {
-        this.match_date_monthANDday = match_date_monthANDday;
+    public void setGame_name(String game_name) {
+        this.game_name = game_name;
     }
 
     public String getUser1_name() {

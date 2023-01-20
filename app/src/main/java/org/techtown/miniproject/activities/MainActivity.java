@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         record_score_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), RecordScoreActivity.class);
+                Intent intent = new Intent(getApplicationContext(), NewscoreDateActivity.class);
                 startActivityResult.launch(intent);
             }
         });

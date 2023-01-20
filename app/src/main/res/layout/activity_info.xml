@@ -7,7 +7,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         android:orientation="horizontal">
 
         <View
@@ -35,31 +35,66 @@
 
     </LinearLayout>
 
-<!--    <com.google.android.material.tabs.TabLayout-->
-<!--        android:id="@+id/tabs"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="40dp"-->
-<!--        android:elevation="1dp"-->
-<!--        android:background="@android:color/background_light" />-->
+    <!--    <com.google.android.material.tabs.TabLayout-->
+    <!--        android:id="@+id/tabs"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="40dp"-->
+    <!--        android:elevation="1dp"-->
+    <!--        android:background="@android:color/background_light" />-->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="오름차순"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="/"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="내림차순"/>
+
+        </LinearLayout>
+
+    </FrameLayout>
 
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:background="@drawable/record_background">
 
-<!--        <fragment-->
-<!--            android:id="@+id/fragment_game"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:name="org.techtown.miniproject.GameFragment"/>-->
+        <fragment
+            android:id="@+id/fragment_game"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:name="org.techtown.miniproject.GameFragment"/>
 
-<!--        <fragment-->
-<!--            android:id="@+id/fragment_user"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:name="org.techtown.miniproject.UserFragment"/>-->
+        <fragment
+            android:id="@+id/fragment_user"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:name="org.techtown.miniproject.UserFragment"/>
 
 
     </FrameLayout>

@@ -18,7 +18,7 @@ public class ScoreAdapter extends RecyclerView.Adapter<ScoreAdapter.ViewHolder>{
 
     Context context;
     ArrayList<ScoreItem> items = new ArrayList<ScoreItem>();
-    TextView match_date_year, match_date_monthANDday, user1_name, user2_name, user1_score, user2_score;
+    TextView match_date, game_name, user1_name, user2_name, user1_score, user2_score;
 
     public ScoreAdapter(Context context) {
         this.context = context;
@@ -61,8 +61,8 @@ public class ScoreAdapter extends RecyclerView.Adapter<ScoreAdapter.ViewHolder>{
         public ViewHolder(View itemView) {
             super(itemView) ;
 
-            match_date_year = itemView.findViewById(R.id.match_date_year) ;
-            match_date_monthANDday = itemView.findViewById(R.id.match_date_monthANDday) ;
+            match_date = itemView.findViewById(R.id.match_date);
+            game_name = itemView.findViewById(R.id.game_name);
             user1_name = itemView.findViewById(R.id.user1_name) ;
             user2_name = itemView.findViewById(R.id.user2_name) ;
             user1_score = itemView.findViewById(R.id.user1_score) ;
@@ -71,8 +71,8 @@ public class ScoreAdapter extends RecyclerView.Adapter<ScoreAdapter.ViewHolder>{
         }
 
         public void setItem(ScoreItem item) {
-            match_date_year.setText(String.valueOf(item.getMatch_date_year()));
-            match_date_monthANDday.setText(item.getMatch_date_monthANDday());
+            match_date.setText(item.getMatch_date());
+            game_name.setText(item.getGame_name());
             user1_name.setText(item.getUser1_name());
             user2_name.setText(item.getUser2_name());
             user1_score.setText(String.valueOf(item.getUser1_score()));
