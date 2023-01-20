@@ -36,14 +36,14 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="대결한 날짜를 입력해 주세요"
+            android:text="대결한 날짜를 선택해 주세요"
             android:textColor="#222222"
             android:textStyle="bold"
             android:textSize="20dp"/>
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="25dp" />
+            android:layout_height="20dp" />
 
         <android.widget.Button
             android:id="@+id/match_date"
@@ -55,14 +55,6 @@
             android:text="2022. 10. 18."
             android:textAlignment="viewStart"
             android:textColor="#999999"/>
-
-        <DatePicker
-            android:id="@+id/datePicker"
-            android:layout_width="320dp"
-            android:layout_height="150dp"
-            android:layout_gravity="center_horizontal"
-            android:calendarViewShown="false"
-            android:datePickerMode="spinner" />
 
         <View
             android:layout_width="match_parent"
