@@ -16,6 +16,8 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.sothree.slidinguppanel.SlidingUpPanelLayout;
+
 import org.techtown.miniproject.R;
 
 public class NewscoreGameActivity extends AppCompatActivity {
@@ -26,8 +28,18 @@ public class NewscoreGameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_newscore_game);
 
-        TextView game_name = (TextView) findViewById(R.id.game_name);
+        SlidingUpPanelLayout sliding_layout = (SlidingUpPanelLayout) findViewById(R.id.sliding_layout);
 
+        /* 게임 버튼 이벤트 */
+        Button game_button = (Button) findViewById(R.id.game_name);
+        game_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sliding_layout.setPanelState(SlidingUpPanelLayout.PanelState.EXPANDED);
+            }
+        });
+
+        /* 다음 버튼 이벤트 */
         Button next_button = (Button) findViewById(R.id.next_button);
         next_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,6 +63,35 @@ public class NewscoreGameActivity extends AppCompatActivity {
 //        }
 
     }
+
+//    private SlidingUpPanelLayout.PanelSlideListener onSlideListener() {
+//        return new SlidingUpPanelLayout.PanelSlideListener() {
+//            @Override
+//            public void onPanelSlide(View view, float v) {
+//            }
+//
+//            @Override
+//            public void onPanelStateChanged(View panel, SlidingUpPanelLayout.PanelState previousState, SlidingUpPanelLayout.PanelState newState) {
+//
+//            }
+//
+//            @Override
+//            public void onPanelCollapsed(View view) {
+//            }
+//
+//            @Override
+//            public void onPanelExpanded(View view) {
+//            }
+//
+//            @Override
+//            public void onPanelAnchored(View view) {
+//            }
+//
+//            @Override
+//            public void onPanelHidden(View view) {
+//            }
+//        };
+//    }
 
     ActivityResultLauncher<Intent> startActivityResult = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
