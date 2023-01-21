@@ -52,6 +52,7 @@
             android:padding="10dp"
             android:drawableRight="@drawable/arrow_resize"
             android:background="@drawable/edittext_round_corner_rectangle"
+            style="?android:attr/borderlessButtonStyle"
             android:text="2022. 10. 18."
             android:textAlignment="viewStart"
             android:textColor="#999999"/>

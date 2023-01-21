@@ -67,6 +67,7 @@
                 android:drawableRight="@drawable/arrow_resize"
                 android:padding="10dp"
                 android:background="@drawable/edittext_round_corner_rectangle"
+                style="?android:attr/borderlessButtonStyle"
                 android:text="게임"
                 android:textAlignment="viewStart"
                 android:textColor="#C2C8BF"/>
@@ -109,6 +110,7 @@
 
     </LinearLayout>
 
+    <!--  -->
     <LinearLayout
         android:id="@+id/drag_view"
         android:layout_width="match_parent"
@@ -124,6 +126,108 @@
             android:textColor="#222222"
             android:textStyle="bold"
             android:textSize="20dp"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:stretchColumns="0, 1, 2">
+
+                <TableRow>
+                    <android.widget.Button
+                        android:layout_width="0dp"
+                        android:layout_marginRight="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/tablelayout_button_background"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:text="가위바위보"/>
+                    <android.widget.Button
+                        android:layout_width="0dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginRight="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/tablelayout_button_background"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:text="묵찌빠"/>
+                    <android.widget.Button
+                        android:layout_width="0dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/tablelayout_button_background"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:text="탁구"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_marginTop="5dp">
+                    <android.widget.Button
+                        android:layout_width="0dp"
+                        android:layout_marginRight="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/tablelayout_button_background"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:text="1"/>
+                    <android.widget.Button
+                        android:layout_width="0dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginRight="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/tablelayout_button_background"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:text="2"/>
+                    <android.widget.Button
+                        android:layout_width="0dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/tablelayout_button_background"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:text="3"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_marginTop="5dp">
+                    <android.widget.Button
+                        android:layout_width="0dp"
+                        android:layout_marginRight="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/tablelayout_button_background"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:text="4"/>
+                    <android.widget.Button
+                        android:layout_width="0dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginRight="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/tablelayout_button_background"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:text="5"/>
+                    <android.widget.Button
+                        android:layout_width="0dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/tablelayout_button_background"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:text="6"/>
+                </TableRow>
+
+            </TableLayout>
+
+        </ScrollView>
+
+        <android.widget.Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/save_button_background"
+            android:text="게임 추가"
+            android:textColor="#ffffff"
+            android:textSize="18dp"
+            android:textStyle="bold"/>
 
     </LinearLayout>
 
