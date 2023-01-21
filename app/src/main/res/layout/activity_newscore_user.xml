@@ -68,6 +68,7 @@
             android:padding="10dp"
             android:drawableRight="@drawable/arrow_resize"
             android:background="@drawable/edittext_round_corner_rectangle"
+            style="?android:attr/borderlessButtonStyle"
             android:text="이름"
             android:textAlignment="viewStart"
             android:textColor="#C2C8BF"/>
@@ -88,6 +89,7 @@
             android:padding="10dp"
             android:drawableRight="@drawable/arrow_resize"
             android:background="@drawable/edittext_round_corner_rectangle"
+            style="?android:attr/borderlessButtonStyle"
             android:text="점수"
             android:textAlignment="viewStart"
             android:textColor="#C2C8BF"/>
@@ -108,6 +110,7 @@
             android:padding="10dp"
             android:drawableRight="@drawable/arrow_resize"
             android:background="@drawable/edittext_round_corner_rectangle"
+            style="?android:attr/borderlessButtonStyle"
             android:text="이름"
             android:textAlignment="viewStart"
             android:textColor="#C2C8BF"/>
@@ -128,6 +131,7 @@
             android:padding="10dp"
             android:drawableRight="@drawable/arrow_resize"
             android:background="@drawable/edittext_round_corner_rectangle"
+            style="?android:attr/borderlessButtonStyle"
             android:text="점수"
             android:textAlignment="viewStart"
             android:textColor="#C2C8BF"/>
@@ -161,6 +165,7 @@
             android:layout_gravity="center"
             android:layout_marginBottom="15dp"
             android:background="@drawable/next_button_background"
+            style="?android:attr/borderlessButtonStyle"
             android:text="저장"
             android:textColor="#ffffff"
             android:textSize="20dp"

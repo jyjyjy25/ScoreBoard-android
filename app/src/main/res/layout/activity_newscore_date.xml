@@ -86,6 +86,7 @@
             android:layout_gravity="center"
             android:layout_marginBottom="15dp"
             android:background="@drawable/next_button_background"
+            style="?android:attr/borderlessButtonStyle"
             android:text="다음"
             android:textColor="#ffffff"
             android:textSize="20dp"

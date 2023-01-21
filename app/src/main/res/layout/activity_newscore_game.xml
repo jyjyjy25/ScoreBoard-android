@@ -58,19 +58,19 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="25dp"/>
+                android:layout_height="20dp"/>
 
             <android.widget.Button
                 android:id="@+id/game_name"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:drawableRight="@drawable/arrow_resize"
                 android:padding="10dp"
+                android:drawableRight="@drawable/arrow_resize"
                 android:background="@drawable/edittext_round_corner_rectangle"
                 style="?android:attr/borderlessButtonStyle"
                 android:text="게임"
                 android:textAlignment="viewStart"
-                android:textColor="#C2C8BF"/>
+                android:textColor="#999999"/>
 
             <View
                 android:layout_width="match_parent"
@@ -101,6 +101,7 @@
                 android:layout_gravity="center"
                 android:layout_marginBottom="15dp"
                 android:background="@drawable/next_button_background"
+                style="?android:attr/borderlessButtonStyle"
                 android:text="다음"
                 android:textColor="#ffffff"
                 android:textSize="20dp"
@@ -222,8 +223,12 @@
         <android.widget.Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:background="@drawable/save_button_background"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/info_add_button_background"
+            style="?android:attr/borderlessButtonStyle"
             android:text="게임 추가"
             android:textColor="#ffffff"
             android:textSize="18dp"
