@@ -18,7 +18,7 @@ public class GameAdapter extends RecyclerView.Adapter<GameAdapter.ViewHolder>{
 
     Context context;
     ArrayList<GameItem> items = new ArrayList<GameItem>();
-    TextView game_name, game_count;
+    TextView game_name;
 
     public GameAdapter(Context context) {
         this.context = context;
@@ -62,12 +62,10 @@ public class GameAdapter extends RecyclerView.Adapter<GameAdapter.ViewHolder>{
             super(itemView) ;
 
             game_name = itemView.findViewById(R.id.game_name) ;
-            game_count = itemView.findViewById(R.id.game_count) ;
         }
 
         public void setItem(GameItem item) {
             game_name.setText(item.getGame_name());
-            game_count.setText(String.valueOf(item.getGame_count()));
         }
     }
 }

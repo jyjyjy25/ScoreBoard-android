@@ -55,9 +55,9 @@ public class GameFragment extends Fragment {
         game_recycler_view.setLayoutManager(game_layoutManager);
 
         GameAdapter game_adapter = new GameAdapter(getActivity());
-        game_adapter.addItem(new GameItem("배구", 3));
-        game_adapter.addItem(new GameItem("컬링", 9));
-        game_adapter.addItem(new GameItem("허들", 4));
+        game_adapter.addItem(new GameItem("배구"));
+        game_adapter.addItem(new GameItem("컬링"));
+        game_adapter.addItem(new GameItem("허들"));
         game_recycler_view.setAdapter(game_adapter);
 
         return rootView;

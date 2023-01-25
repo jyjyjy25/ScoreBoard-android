@@ -6,9 +6,15 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
-        android:orientation="horizontal">
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal"
+        android:elevation="3dp"
+        android:background="@drawable/list_background">
 
         <TextView
             android:id="@+id/game_name"
@@ -20,21 +26,11 @@
             android:text="배구"
             android:textColor="#255950"/>
 
-        <TextView
-            android:id="@+id/game_count"
-            android:layout_width="30dp"
-            android:layout_height="40dp"
-            android:layout_weight="3"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="3"
-            android:textColor="#255950"/>
-
     </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@drawable/separator"/>
+<!--    <View-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="1dp"-->
+<!--        android:background="@drawable/separator"/>-->
 
 </LinearLayout>
