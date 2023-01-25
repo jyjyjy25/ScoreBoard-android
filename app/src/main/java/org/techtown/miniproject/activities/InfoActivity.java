@@ -11,44 +11,41 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
+import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
 
 import org.techtown.miniproject.GameFragment;
 import org.techtown.miniproject.R;
 import org.techtown.miniproject.UserFragment;
+import org.techtown.miniproject.adapters.InfoPagerAdapter;
 
 public class InfoActivity extends AppCompatActivity {
     TabLayout tabs;
-    GameFragment game_fragment;
-    UserFragment user_fragment;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
 
-        game_fragment = new GameFragment();
-        user_fragment = new UserFragment();
-
-        getSupportFragmentManager().beginTransaction().add(R.id.container, game_fragment).commit();
-
+        /* tab 추가 */
         tabs = (TabLayout) findViewById(R.id.tabs);
         tabs.addTab(tabs.newTab().setText("게임"));
         tabs.addTab(tabs.newTab().setText("유저"));
 
+        /* ViewPager 설정 */
+        ViewPager pager = (ViewPager) findViewById(R.id.pager);
+
+        InfoPagerAdapter adapter = new InfoPagerAdapter(getSupportFragmentManager(), tabs.getTabCount());
+        pager.setAdapter(adapter);
+
+        /* ViewPager 스와이프 이벤트 */
+        pager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabs));
+
+        /* tab 클릭 이벤트 */
         tabs.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                int position = tab.getPosition();
-
-                Fragment selected = null;
-                if (position == 0) {
-                    selected = game_fragment;
-                } else if (position == 1) {
-                    selected = user_fragment;
-                }
-
-                getSupportFragmentManager().beginTransaction().replace(R.id.container, selected).commit();
+                pager.setCurrentItem(tab.getPosition());
             }
 
             @Override
@@ -63,7 +60,5 @@ public class InfoActivity extends AppCompatActivity {
         });
 
     }
-
-
 
 }

@@ -5,63 +5,54 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/newscore_title"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@drawable/title_separator"/>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="1dp"
+        android:background="@android:color/background_light"
+        app:tabMode="fixed"
+        app:tabGravity="fill"
+        app:tabTextColor="@color/TextColorSecondary"
+        app:tabSelectedTextColor="@color/MainColorPrimary"
+        app:tabIndicatorColor="@color/MainColorPrimary">
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:elevation="1dp"
-            android:background="@android:color/background_light"
-            app:tabMode="fixed"
-            app:tabGravity="fill"
-            app:tabTextColor="@color/MainColorSecondary"
-            app:tabSelectedTextColor="@color/MainColorTertiary">
+    </androidx.viewpager.widget.ViewPager>
 
-        </com.google.android.material.tabs.TabLayout>
-
-        <FrameLayout
-            android:id="@+id/container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-        </FrameLayout>
-
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-    <LinearLayout
+    <FrameLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="50dp"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1"/>
+    </FrameLayout>
 
-        <ImageButton
-            android:id="@+id/index_game"
-            android:layout_width="100dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/game_pressed_btn" />
-
-        <ImageButton
-            android:id="@+id/index_user"
-            android:layout_width="100dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="20dp"
-            android:background="@drawable/user_btn" />
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1"/>
-
-    </LinearLayout>
 
 
 </LinearLayout>
