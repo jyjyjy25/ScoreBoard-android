@@ -34,7 +34,9 @@
         <entry key="..\:/Users/JYKIM/AndroidStudioProjects/MiniProject/app/src/main/res/drawable/tab_game_style.xml" value="0.2285" />
         <entry key="..\:/Users/JYKIM/AndroidStudioProjects/MiniProject/app/src/main/res/drawable/tab_sort_select.xml" value="0.1485" />
         <entry key="..\:/Users/JYKIM/AndroidStudioProjects/MiniProject/app/src/main/res/drawable/tab_sort_select_reverse.xml" value="0.1485" />
+        <entry key="..\:/Users/JYKIM/AndroidStudioProjects/MiniProject/app/src/main/res/drawable/tab_sort_selected.xml" value="0.196" />
         <entry key="..\:/Users/JYKIM/AndroidStudioProjects/MiniProject/app/src/main/res/drawable/tab_sort_style.xml" value="0.269" />
+        <entry key="..\:/Users/JYKIM/AndroidStudioProjects/MiniProject/app/src/main/res/drawable/tab_sort_unselected.xml" value="0.196" />
         <entry key="..\:/Users/JYKIM/AndroidStudioProjects/MiniProject/app/src/main/res/drawable/tablelayout_button_background.xml" value="0.1735" />
         <entry key="..\:/Users/JYKIM/AndroidStudioProjects/MiniProject/app/src/main/res/drawable/title_separator.xml" value="0.2925" />
         <entry key="..\:/Users/JYKIM/AndroidStudioProjects/MiniProject/app/src/main/res/layout/activities/activity_main.xml" value="0.55" />

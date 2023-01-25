@@ -1,23 +1,15 @@
 package org.techtown.miniproject.activities;
 
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageButton;
-import android.widget.ImageView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
 
-import org.techtown.miniproject.GameFragment;
 import org.techtown.miniproject.R;
-import org.techtown.miniproject.UserFragment;
 import org.techtown.miniproject.adapters.InfoPagerAdapter;
 
 public class InfoActivity extends AppCompatActivity {
@@ -31,6 +23,11 @@ public class InfoActivity extends AppCompatActivity {
         tabs = (TabLayout) findViewById(R.id.tabs);
         tabs.addTab(tabs.newTab().setText("게임"));
         tabs.addTab(tabs.newTab().setText("유저"));
+
+        /* tab 아이콘 색상 설정 */
+        tabs.getTabAt(0).setIcon(R.drawable.ic_game);
+        tabs.getTabAt(1).setIcon(R.drawable.ic_user);
+        tabs.getTabAt(0).getIcon().setColorFilter(Color.parseColor("#FF699565"), PorterDuff.Mode.SRC_IN);
 
         /* ViewPager 설정 */
         ViewPager pager = (ViewPager) findViewById(R.id.pager);
@@ -46,11 +43,12 @@ public class InfoActivity extends AppCompatActivity {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 pager.setCurrentItem(tab.getPosition());
+                tab.getIcon().setColorFilter(Color.parseColor("#FF699565"), PorterDuff.Mode.SRC_IN);
             }
 
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
-
+                tab.getIcon().setColorFilter(Color.BLACK, PorterDuff.Mode.SRC_IN);
             }
 
             @Override

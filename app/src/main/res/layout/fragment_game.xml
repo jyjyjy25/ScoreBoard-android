@@ -19,22 +19,24 @@
 
         <FrameLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginTop="2dp">
 
             <View
-                android:layout_width="140dp"
+                android:layout_width="135dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/tab_sort_style"/>
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tabs"
-                android:layout_width="135dp"
+                android:layout_width="wrap_content"
                 android:layout_height="25dp"
                 android:layout_gravity="center"
                 app:tabMode="fixed"
                 app:tabGravity="start"
                 android:textColorPrimary="#999999"
                 android:textColorSecondary="#ffffff"
+                android:background="@drawable/tab_sort_unselected"
                 app:tabBackground="@drawable/tab_sort_style"
                 app:tabTextAppearance="@style/TabLayoutTextSize"
                 app:tabIndicatorHeight="0dp">
