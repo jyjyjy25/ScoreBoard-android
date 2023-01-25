@@ -26,4 +26,8 @@
         <!-- 취소/확인버튼 색상 -->
 <!--        <item name="android:textColor">@color/MainColorPrimary</item>-->
     </style>
+
+    <style name="TabLayoutTextSize" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">11dp</item>
+    </style>
 </resources>
