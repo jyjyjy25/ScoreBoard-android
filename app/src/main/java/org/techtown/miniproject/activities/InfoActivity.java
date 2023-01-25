@@ -27,15 +27,12 @@ public class InfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
         game_fragment = new GameFragment();
         user_fragment = new UserFragment();
 
         getSupportFragmentManager().beginTransaction().add(R.id.container, game_fragment).commit();
 
-        TabLayout tabs = (TabLayout) findViewById(R.id.tabs);
+        tabs = (TabLayout) findViewById(R.id.tabs);
         tabs.addTab(tabs.newTab().setText("게임"));
         tabs.addTab(tabs.newTab().setText("유저"));
 

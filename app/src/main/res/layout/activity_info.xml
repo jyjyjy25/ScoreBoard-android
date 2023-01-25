@@ -9,35 +9,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.google.android.material.appbar.AppBarLayout
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+            android:elevation="1dp"
+            android:background="@android:color/background_light"
+            app:tabMode="fixed"
+            app:tabGravity="fill"
+            app:tabTextColor="@color/MainColorSecondary"
+            app:tabSelectedTextColor="@color/MainColorTertiary">
 
-            <androidx.appcompat.widget.Toolbar
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/MainColorPrimary"
-                android:theme="@style/ThemeOverlay.AppCompat.Dark"
-                android:elevation="1dp"
-                android:id="@+id/toolbar">
-
-            </androidx.appcompat.widget.Toolbar>
-
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tabs"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:elevation="1dp"
-                android:background="@android:color/background_light"
-                app:tabMode="fixed"
-                app:tabGravity="fill"
-                app:tabTextColor="@color/MainColorSecondary"
-                app:tabSelectedTextColor="@color/MainColorTertiary">
-
-            </com.google.android.material.tabs.TabLayout>
-
-        </com.google.android.material.appbar.AppBarLayout>
+        </com.google.android.material.tabs.TabLayout>
 
         <FrameLayout
             android:id="@+id/container"
