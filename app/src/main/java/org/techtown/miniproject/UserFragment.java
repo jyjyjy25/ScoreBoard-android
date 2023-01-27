@@ -37,7 +37,7 @@ public class UserFragment extends Fragment {
 
         UserAdapter user_adapter = new UserAdapter(getActivity());
         user_adapter.addItem(new UserItem("Gabe", 31, "Male", 4, 0));
-        user_adapter.addItem(new UserItem("June", 30, "Male", 0, 4));
+        user_adapter.addItem(new UserItem("June", 29, "Male", 0, 4));
         user_adapter.addItem(new UserItem("Julia", 23, "Female", 2, 2));
         user_recycler_view.setAdapter(user_adapter);
 
