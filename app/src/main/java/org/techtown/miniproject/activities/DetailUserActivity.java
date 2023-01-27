@@ -14,7 +14,7 @@ public class DetailUserActivity extends AppCompatActivity {
     String name, gender;
     int age, win_cnt, lose_cnt;
 
-    protected void OnCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_user);
 
@@ -30,13 +30,12 @@ public class DetailUserActivity extends AppCompatActivity {
         gender = intent.getStringExtra("gender");
         win_cnt = intent.getIntExtra("win_cnt", 0);
         lose_cnt = intent.getIntExtra("lose_cnt", 0);
-        Log.d("Tag", name);
 
         detail_name.setText(name);
-        detail_age.setText(age);
+        detail_age.setText(String.valueOf(age));
         detail_gender.setText(gender);
-        detail_win_cnt.setText(win_cnt);
-        detail_lose_cnt.setText(lose_cnt);
+        detail_win_cnt.setText(String.valueOf(win_cnt));
+        detail_lose_cnt.setText(String.valueOf(lose_cnt));
 
     }
 }
