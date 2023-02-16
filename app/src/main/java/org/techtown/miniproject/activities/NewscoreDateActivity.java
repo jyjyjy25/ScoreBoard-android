@@ -26,36 +26,45 @@ import androidx.core.content.ContextCompat;
 import org.techtown.miniproject.R;
 import org.w3c.dom.Text;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class NewscoreDateActivity extends AppCompatActivity {
     int pYear=0, pMonth=0, pDay=0;
     DatePickerDialog datePickerDialog;
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_newscore_date);
 
-        /* 날짜 입력 버튼 */
         Button match_date = (Button) findViewById(R.id.match_date);
+
+        /* 오늘 날짜 가져오기 */
+        Calendar calendar = Calendar.getInstance();
+        pYear = calendar.get(Calendar.YEAR);
+        pMonth = calendar.get(Calendar.MONTH) + 1;
+        pDay = calendar.get(Calendar.DAY_OF_MONTH);
+
+        /* match_date의 text를 오늘 날짜로 설정하기*/
+        String date = pYear + ". " + pMonth + ". " + pDay + ".";
+        match_date.setText(date);
+
+        /* match_date 버튼 이벤트 설정 */
         match_date.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View view) {
-                /* 오늘 날짜 가져오기 */
-                Calendar calendar = Calendar.getInstance();
-                pYear = calendar.get(Calendar.YEAR);
-                pMonth = calendar.get(Calendar.MONTH);
-                pDay = calendar.get(Calendar.DAY_OF_MONTH);
-
                 /* 버튼 클릭 시 datePickerDialog 띄우기 */
                 datePickerDialog = new DatePickerDialog(NewscoreDateActivity.this, R.style.MyDatePickerStyle,
                         new DatePickerDialog.OnDateSetListener() {
                             @Override
                             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                                month = month+1;
+                                month = month + 1;
                                 String date = year + ". " + month + ". " + dayOfMonth + ".";
                                 match_date.setText(date);
                             }
-                        },pYear, pMonth, pDay);
+                        }, pYear, pMonth-1, pDay);
                 datePickerDialog.show();
                 datePickerDialog.getButton(DatePickerDialog.BUTTON_NEGATIVE).setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.MainColorPrimary));
                 datePickerDialog.getButton(DatePickerDialog.BUTTON_POSITIVE).setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.MainColorPrimary));
