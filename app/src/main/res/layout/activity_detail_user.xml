@@ -4,36 +4,178 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/detail_name"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/MainColorTertiary"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="50dp"/>
+
+        <ImageView
+            android:id="@+id/user_profile"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_gravity="center"
+            android:src="@drawable/user"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="20dp"/>
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Gabe"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:textColor="#082c0f"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="30dp"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="50dp"/>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Gabe"/>
+        android:layout_gravity="center"
+        android:layout_marginBottom="7dp"
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/detail_age"
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="나이:"
+            android:textColor="#808080"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:id="@+id/user_age"
+            android:layout_width="100dp"
+            android:layout_height="33dp"
+            android:layout_marginLeft="15dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="31"
+            android:textSize="17dp"
+            android:textColor="#999999"
+            android:background="@drawable/edittext_round_corner_rectangle"/>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="31"/>
+        android:layout_gravity="center"
+        android:layout_marginBottom="7dp"
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/detail_gender"
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="성별:"
+            android:textColor="#808080"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:id="@+id/user_gender"
+            android:layout_width="100dp"
+            android:layout_height="33dp"
+            android:layout_marginLeft="15dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Male"
+            android:textSize="17dp"
+            android:textColor="#999999"
+            android:background="@drawable/edittext_round_corner_rectangle"/>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Male"/>
+        android:layout_gravity="center"
+        android:layout_marginBottom="7dp"
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/detail_win_cnt"
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="승리 횟수:"
+            android:textColor="#808080"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:id="@+id/user_win_num"
+            android:layout_width="100dp"
+            android:layout_height="33dp"
+            android:layout_marginLeft="15dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="4"
+            android:textSize="17dp"
+            android:textColor="#999999"
+            android:background="@drawable/edittext_round_corner_rectangle"/>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="4"/>
+        android:layout_gravity="center"
+        android:layout_marginBottom="7dp"
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/detail_lose_cnt"
-        android:layout_width="wrap_content"
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="패배 횟수:"
+            android:textColor="#808080"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:id="@+id/user_lose_num"
+            android:layout_width="100dp"
+            android:layout_height="33dp"
+            android:layout_marginLeft="15dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="0"
+            android:textSize="17dp"
+            android:textColor="#999999"
+            android:background="@drawable/edittext_round_corner_rectangle"/>
+
+    </LinearLayout>
+
+    <android.widget.Button
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:text="0"/>
-
-
+        android:layout_marginTop="105dp"
+        android:layout_gravity="center"
+        android:background="@drawable/info_add_button_background"
+        style="?android:attr/borderlessButtonStyle"
+        android:text="정보 수정"
+        android:textColor="#ffffff"
+        android:textSize="16dp"
+        android:textStyle="bold"/>
 
 </LinearLayout>

@@ -3,6 +3,7 @@ package org.techtown.miniproject.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -54,6 +55,16 @@ public class NewscoreGameActivity extends AppCompatActivity {
                 }
             }
         });
+
+//        Button.OnClickListener onClickListener = new Button.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                String game_name = view.getText().toString();
+//                game_button.setText(game_name);
+//            }
+//        };
+
+
 
         /* editText 비어있음 여부 확인 */
 //        if(TextUtils.isEmpty(game_name.getText())) {

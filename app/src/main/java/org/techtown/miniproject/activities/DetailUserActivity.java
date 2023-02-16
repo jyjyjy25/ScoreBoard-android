@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.TaskStackBuilder;
 
 public class DetailUserActivity extends AppCompatActivity {
-    TextView detail_name, detail_age, detail_gender, detail_win_cnt, detail_lose_cnt;
+    TextView user_name, user_age, user_gender, user_win_num, user_lose_num;
     String name, gender;
     int age, win_cnt, lose_cnt;
 
@@ -18,11 +18,11 @@ public class DetailUserActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_user);
 
-        detail_name = (TextView) findViewById(R.id.detail_name);
-        detail_age = (TextView) findViewById(R.id.detail_age);
-        detail_gender = (TextView) findViewById(R.id.detail_gender);
-        detail_win_cnt = (TextView) findViewById(R.id.detail_win_cnt);
-        detail_lose_cnt = (TextView) findViewById(R.id.detail_lose_cnt);
+        user_name = (TextView) findViewById(R.id.user_name);
+        user_age = (TextView) findViewById(R.id.user_age);
+        user_gender = (TextView) findViewById(R.id.user_gender);
+        user_win_num = (TextView) findViewById(R.id.user_win_num);
+        user_lose_num = (TextView) findViewById(R.id.user_lose_num);
 
         Intent intent = getIntent();
         name = intent.getStringExtra("name");
@@ -31,11 +31,11 @@ public class DetailUserActivity extends AppCompatActivity {
         win_cnt = intent.getIntExtra("win_cnt", 0);
         lose_cnt = intent.getIntExtra("lose_cnt", 0);
 
-        detail_name.setText(name);
-        detail_age.setText(String.valueOf(age));
-        detail_gender.setText(gender);
-        detail_win_cnt.setText(String.valueOf(win_cnt));
-        detail_lose_cnt.setText(String.valueOf(lose_cnt));
+        user_name.setText(name);
+        user_age.setText(String.valueOf(age));
+        user_gender.setText(gender);
+        user_win_num.setText(String.valueOf(win_cnt));
+        user_lose_num.setText(String.valueOf(lose_cnt));
 
     }
 }

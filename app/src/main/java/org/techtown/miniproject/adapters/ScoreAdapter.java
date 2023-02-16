@@ -67,7 +67,6 @@ public class ScoreAdapter extends RecyclerView.Adapter<ScoreAdapter.ViewHolder>{
             user2_name = itemView.findViewById(R.id.user2_name) ;
             user1_score = itemView.findViewById(R.id.user1_score) ;
             user2_score = itemView.findViewById(R.id.user2_score) ;
-
         }
 
         public void setItem(ScoreItem item) {
