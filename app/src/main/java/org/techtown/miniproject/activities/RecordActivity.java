@@ -1,5 +1,6 @@
 package org.techtown.miniproject.activities;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -8,6 +9,8 @@ import android.widget.LinearLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.tabs.TabLayout;
 
 import org.techtown.miniproject.adapters.GameAdapter;
 import org.techtown.miniproject.items.GameItem;
@@ -24,6 +27,11 @@ public class RecordActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_record);
 
+        /* 선택된 tab 텍스트 색상 설정 */
+        TabLayout tabs = (TabLayout) findViewById(R.id.tabs);
+        tabs.setTabTextColors(Color.rgb(153, 153, 153), Color.rgb(0, 0, 0));
+
+        /* recycler view 설정 */
         score_recycler_view = (RecyclerView) findViewById(R.id.score_recycler_view);
         LinearLayoutManager score_layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         score_recycler_view.setLayoutManager(score_layoutManager);
