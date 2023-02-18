@@ -1,12 +1,21 @@
 package org.techtown.miniproject.activities;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +30,8 @@ import org.techtown.miniproject.items.UserItem;
 
 public class NewscoreUserActivity extends AppCompatActivity {
     RecyclerView user_recycler_view;
+    Handler handler = new Handler();
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_newscore_user);
@@ -30,6 +41,7 @@ public class NewscoreUserActivity extends AppCompatActivity {
         Button user2_name = (Button) findViewById(R.id.user2_name);
         EditText user2_score = (EditText) findViewById(R.id.user2_score);
         SlidingUpPanelLayout sliding_layout = (SlidingUpPanelLayout) findViewById(R.id.sliding_layout);
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE); // 키보드 객체
 
         /* recyclerView 설정 */
         user_recycler_view = (RecyclerView) findViewById(R.id.user_recycler_view);
@@ -46,12 +58,26 @@ public class NewscoreUserActivity extends AppCompatActivity {
         user1_name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                sliding_layout.setPanelState(SlidingUpPanelLayout.PanelState.EXPANDED);
+                if (getApplicationContext().getResources().getConfiguration().hardKeyboardHidden == Configuration.HARDKEYBOARDHIDDEN_NO) {
+                    user1_score.clearFocus();
+                    user2_score.clearFocus();
+                    imm.hideSoftInputFromWindow(user1_score.getWindowToken(), imm.HIDE_NOT_ALWAYS); // 키보드 내리기
+                }
+
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        sliding_layout.setPanelState(SlidingUpPanelLayout.PanelState.EXPANDED); // 패널 올리기
+                    }
+                },300); // 0.3초동안 딜레이
+
                 user_adapter.setOnItemClickListener(new UserNewscoreAdapter.OnItemClickListener() {
                     @Override
                     public void OnItemClick(View view, int pos) {
-                        user1_name.setText(user_adapter.getItem(pos).getUser_name());
-                        sliding_layout.setPanelState(SlidingUpPanelLayout.PanelState.HIDDEN);
+                        user1_name.setText(user_adapter.getItem(pos).getUser_name()); // 유저 이름 설정
+                        sliding_layout.setPanelState(SlidingUpPanelLayout.PanelState.HIDDEN); // 패널 내리기
+                        user1_score.requestFocus(); // user1_score 포커스 주기
+                        imm.showSoftInput(user1_score, InputMethodManager.SHOW_IMPLICIT); // 키보드 올리기
                     }
                 });
             }
@@ -59,18 +85,64 @@ public class NewscoreUserActivity extends AppCompatActivity {
         user2_name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                sliding_layout.setPanelState(SlidingUpPanelLayout.PanelState.EXPANDED);
+                if (getApplicationContext().getResources().getConfiguration().hardKeyboardHidden == Configuration.HARDKEYBOARDHIDDEN_NO) {
+                    user1_score.clearFocus();
+                    user2_score.clearFocus();
+                    imm.hideSoftInputFromWindow(user2_score.getWindowToken(), imm.HIDE_NOT_ALWAYS); // 키보드 내리기
+                }
+
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        sliding_layout.setPanelState(SlidingUpPanelLayout.PanelState.EXPANDED); // 패널 올리기
+                    }
+                },300); // 0.3초동안 딜레이
+
                 user_adapter.setOnItemClickListener(new UserNewscoreAdapter.OnItemClickListener() {
                     @Override
                     public void OnItemClick(View view, int pos) {
-                        user2_name.setText(user_adapter.getItem(pos).getUser_name());
-                        sliding_layout.setPanelState(SlidingUpPanelLayout.PanelState.HIDDEN);
+                        user2_name.setText(user_adapter.getItem(pos).getUser_name()); // 유저 이름 설정
+                        sliding_layout.setPanelState(SlidingUpPanelLayout.PanelState.HIDDEN); // 패널 내리기
+                        user2_score.requestFocus(); // user2_score 포커스 주기
+                        imm.showSoftInput(user2_score, InputMethodManager.SHOW_IMPLICIT); // 키보드 올리기
                     }
                 });
             }
         });
 
         user_recycler_view.setAdapter(user_adapter);
+
+        /* user1_score 키보드의 NEXT 버튼 이벤트 */
+        user1_score.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if(actionId == EditorInfo.IME_ACTION_NEXT){
+                    user2_score.clearFocus();
+                    user2_name.performClick();
+                }
+                return false;
+            }
+        });
+
+        /* user_score 선택 시 패널이 EXPANDED 상태일 경우 HIDDEN으로 변경 */
+        user1_score.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (sliding_layout.getPanelState() == SlidingUpPanelLayout.PanelState.EXPANDED) {
+                    sliding_layout.setPanelState(SlidingUpPanelLayout.PanelState.HIDDEN);
+                }
+                user1_score.requestFocus();
+            }
+        });
+        user2_score.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (sliding_layout.getPanelState() == SlidingUpPanelLayout.PanelState.EXPANDED) {
+                    sliding_layout.setPanelState(SlidingUpPanelLayout.PanelState.HIDDEN);
+                }
+                user2_score.requestFocus();
+            }
+        });
 
         /* drag_view 외부 영역 클릭 시 발생하는 이벤트 */
         LinearLayout background_layout = (LinearLayout) findViewById(R.id.background_view);
