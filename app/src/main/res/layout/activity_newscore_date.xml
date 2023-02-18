@@ -49,11 +49,11 @@
             android:id="@+id/match_date"
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:padding="10dp"
+            android:padding="13dp"
             android:drawableRight="@drawable/arrow_resize"
             android:background="@drawable/edittext_round_corner_rectangle"
             style="?android:attr/borderlessButtonStyle"
-            android:text="2022. 10. 18."
+            android:text="날짜"
             android:textAlignment="viewStart"
             android:textColor="#999999"/>
 

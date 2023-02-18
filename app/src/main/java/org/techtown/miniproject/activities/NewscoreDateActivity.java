@@ -46,10 +46,6 @@ public class NewscoreDateActivity extends AppCompatActivity {
         pMonth = calendar.get(Calendar.MONTH) + 1;
         pDay = calendar.get(Calendar.DAY_OF_MONTH);
 
-        /* match_date의 text를 오늘 날짜로 설정하기*/
-        String date = pYear + ". " + pMonth + ". " + pDay + ".";
-        match_date.setText(date);
-
         /* match_date 버튼 이벤트 설정 */
         match_date.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.N)
