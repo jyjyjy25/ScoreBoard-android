@@ -3,7 +3,6 @@ package org.techtown.miniproject.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,7 +16,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
 import org.techtown.miniproject.R;
-import org.techtown.miniproject.adapters.UserInfoAdapter;
 import org.techtown.miniproject.adapters.UserNewscoreAdapter;
 import org.techtown.miniproject.items.UserItem;
 
@@ -25,7 +23,7 @@ public class NewscoreUserActivity extends AppCompatActivity {
     RecyclerView user_recycler_view;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_newscore_user2);
+        setContentView(R.layout.activity_newscore_user);
 
         Button user1_name = (Button) findViewById(R.id.user1_name);
         EditText user1_score = (EditText) findViewById(R.id.user1_score);

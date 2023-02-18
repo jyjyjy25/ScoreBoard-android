@@ -134,8 +134,8 @@
                     android:layout_height="45dp"
                     android:layout_marginLeft="20dp"
                     android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="점수"
+                    android:inputType="number"
+                    android:hint="점수"
                     android:textSize="14dp"
                     android:textColor="#999999"
                     android:background="@drawable/edittext_round_corner_rectangle"/>
@@ -208,8 +208,9 @@
                     android:layout_height="45dp"
                     android:layout_marginLeft="20dp"
                     android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="점수"
+                    android:inputType="number"
+                    android:hint="점수"
+                    android:imeOptions="actionDone"
                     android:textSize="14dp"
                     android:textColor="#999999"
                     android:background="@drawable/edittext_round_corner_rectangle"/>
