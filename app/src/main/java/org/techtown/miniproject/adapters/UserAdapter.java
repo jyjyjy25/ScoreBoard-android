@@ -44,24 +44,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder>{
     public void onBindViewHolder(@NonNull UserAdapter.ViewHolder holder, int position) {
         UserItem item = items.get(position);
         holder.setItem(item);
-
-//        holder.itemView.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View view) {
-//                int mPosition = holder.getAdapterPosition();
-//
-//                Intent intent = new Intent(context, DetailUserActivity.class);
-//
-//                intent.putExtra("name", items.get(mPosition).getUser_name());
-//                intent.putExtra("age", items.get(mPosition).getUser_age());
-//                intent.putExtra("gender", items.get(mPosition).getUser_gender());
-//                intent.putExtra("win_cnt", items.get(mPosition).getWin_num());
-//                intent.putExtra("lose_cnt", items.get(mPosition).getLose_num());
-//
-//                context.startActivity(intent);
-//
-//            }
-//        });
     }
 
     @Override
@@ -96,7 +78,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder>{
                         Intent intent = new Intent(context, DetailUserActivity.class);
 
                         intent.putExtra("name", items.get(pos).getUser_name());
-                        Log.d("Tag", items.get(pos).getUser_name());
                         intent.putExtra("age", items.get(pos).getUser_age());
                         intent.putExtra("gender", items.get(pos).getUser_gender());
                         intent.putExtra("win_cnt", items.get(pos).getWin_num());
