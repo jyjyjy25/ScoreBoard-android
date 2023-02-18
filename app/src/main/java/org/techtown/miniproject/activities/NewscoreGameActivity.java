@@ -6,9 +6,11 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.activity.result.ActivityResult;
@@ -45,16 +47,25 @@ public class NewscoreGameActivity extends AppCompatActivity {
         next_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!isExistBlank) {
+                if (!isExistBlank) {
                     Intent intent = new Intent(getApplicationContext(), NewscoreUserActivity.class);
                     // intent.putExtra("game_name", game_name.getText().toString());
                     startActivityResult.launch(intent);
-                }
-                else {
+                } else {
                     // 비어있는 edittext 디자인 변경
                 }
             }
         });
+
+        /* drag_view 외부 영역 클릭 시 발생하는 이벤트 */
+        LinearLayout background_layout = (LinearLayout) findViewById(R.id.background_view);
+        background_layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sliding_layout.setPanelState(SlidingUpPanelLayout.PanelState.HIDDEN);
+            }
+        });
+
 
 //        Button.OnClickListener onClickListener = new Button.OnClickListener() {
 //            @Override
@@ -63,17 +74,6 @@ public class NewscoreGameActivity extends AppCompatActivity {
 //                game_button.setText(game_name);
 //            }
 //        };
-
-
-
-        /* editText 비어있음 여부 확인 */
-//        if(TextUtils.isEmpty(game_name.getText())) {
-//            isExistBlank = true;
-//        } else {
-//            isExistBlank = false;
-//        }
-
-    }
 
 //    private SlidingUpPanelLayout.PanelSlideListener onSlideListener() {
 //        return new SlidingUpPanelLayout.PanelSlideListener() {
@@ -103,6 +103,8 @@ public class NewscoreGameActivity extends AppCompatActivity {
 //            }
 //        };
 //    }
+
+    }
 
     ActivityResultLauncher<Intent> startActivityResult = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
