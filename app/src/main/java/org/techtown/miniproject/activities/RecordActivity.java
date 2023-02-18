@@ -6,8 +6,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,13 +15,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.textfield.TextInputLayout;
 
-import org.techtown.miniproject.adapters.GameAdapter;
-import org.techtown.miniproject.items.GameItem;
 import org.techtown.miniproject.R;
 import org.techtown.miniproject.adapters.ScoreAdapter;
 import org.techtown.miniproject.items.ScoreItem;
-import org.techtown.miniproject.adapters.UserAdapter;
-import org.techtown.miniproject.items.UserItem;
 
 public class RecordActivity extends AppCompatActivity {
     RecyclerView score_recycler_view;

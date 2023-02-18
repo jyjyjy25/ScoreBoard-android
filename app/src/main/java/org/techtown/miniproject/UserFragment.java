@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.tabs.TabLayout;
 
-import org.techtown.miniproject.adapters.UserAdapter;
+import org.techtown.miniproject.adapters.UserInfoAdapter;
 import org.techtown.miniproject.items.UserItem;
 
 public class UserFragment extends Fragment {
@@ -35,7 +35,7 @@ public class UserFragment extends Fragment {
         LinearLayoutManager user_layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         user_recycler_view.setLayoutManager(user_layoutManager);
 
-        UserAdapter user_adapter = new UserAdapter(getActivity());
+        UserInfoAdapter user_adapter = new UserInfoAdapter(getContext());
         user_adapter.addItem(new UserItem("Gabe", 31, "Male", 4, 0));
         user_adapter.addItem(new UserItem("June", 29, "Male", 0, 4));
         user_adapter.addItem(new UserItem("Julia", 23, "Female", 2, 2));

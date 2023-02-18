@@ -3,17 +3,13 @@ package org.techtown.miniproject.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -21,9 +17,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
 import org.techtown.miniproject.R;
-import org.techtown.miniproject.adapters.UserAdapter;
+import org.techtown.miniproject.adapters.UserInfoAdapter;
+import org.techtown.miniproject.adapters.UserNewscoreAdapter;
 import org.techtown.miniproject.items.UserItem;
-import org.w3c.dom.Text;
 
 public class NewscoreUserActivity extends AppCompatActivity {
     RecyclerView user_recycler_view;
@@ -43,26 +39,40 @@ public class NewscoreUserActivity extends AppCompatActivity {
         LinearLayoutManager user_layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         user_recycler_view.setLayoutManager(user_layoutManager);
 
-        UserAdapter user_adapter = new UserAdapter(this);
+        UserNewscoreAdapter user_adapter = new UserNewscoreAdapter(this);
         user_adapter.addItem(new UserItem("Gabe", 31, "Male", 4, 0));
         user_adapter.addItem(new UserItem("June", 29, "Male", 0, 4));
         user_adapter.addItem(new UserItem("Julia", 23, "Female", 2, 2));
-        user_recycler_view.setAdapter(user_adapter);
 
         /* 유저 선택 이벤트 */
         user1_name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 sliding_layout.setPanelState(SlidingUpPanelLayout.PanelState.EXPANDED);
+                user_adapter.setOnItemClickListener(new UserNewscoreAdapter.OnItemClickListener() {
+                    @Override
+                    public void OnItemClick(View view, int pos) {
+                        user1_name.setText(user_adapter.getItem(pos).getUser_name());
+                        sliding_layout.setPanelState(SlidingUpPanelLayout.PanelState.HIDDEN);
+                    }
+                });
             }
         });
-
         user2_name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 sliding_layout.setPanelState(SlidingUpPanelLayout.PanelState.EXPANDED);
+                user_adapter.setOnItemClickListener(new UserNewscoreAdapter.OnItemClickListener() {
+                    @Override
+                    public void OnItemClick(View view, int pos) {
+                        user2_name.setText(user_adapter.getItem(pos).getUser_name());
+                        sliding_layout.setPanelState(SlidingUpPanelLayout.PanelState.HIDDEN);
+                    }
+                });
             }
         });
+
+        user_recycler_view.setAdapter(user_adapter);
 
         /* drag_view 외부 영역 클릭 시 발생하는 이벤트 */
         LinearLayout background_layout = (LinearLayout) findViewById(R.id.background_view);
