@@ -11,8 +11,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import org.techtown.miniproject.items.GameItem;
 import org.techtown.miniproject.R;
+import org.techtown.miniproject.items.UserItem;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class GameAdapter extends RecyclerView.Adapter<GameAdapter.ViewHolder>{
 
@@ -56,6 +59,8 @@ public class GameAdapter extends RecyclerView.Adapter<GameAdapter.ViewHolder>{
     public GameItem getItem(int position) {
         return items.get(position);
     }
+
+    public ArrayList<GameItem> getItems() {return items; }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public ViewHolder(View itemView) {
