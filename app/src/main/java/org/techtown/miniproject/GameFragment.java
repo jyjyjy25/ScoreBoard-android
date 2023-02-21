@@ -71,16 +71,13 @@ public class GameFragment extends Fragment {
         game_recycler_view.setLayoutManager(game_layoutManager);
 
         GameAdapter game_adapter = new GameAdapter(getActivity());
-        game_adapter.addItem(new GameItem("배구"));
-        game_adapter.addItem(new GameItem("컬링"));
-        game_adapter.addItem(new GameItem("허들"));
         game_adapter.addItem(new GameItem("가위바위보"));
         game_adapter.addItem(new GameItem("탁구"));
-        game_adapter.addItem(new GameItem("농구"));
-        game_adapter.addItem(new GameItem("묵찌빠"));
         game_adapter.addItem(new GameItem("볼링"));
-        game_adapter.addItem(new GameItem("달리기"));
-        game_adapter.addItem(new GameItem("신발던지기"));
+        game_adapter.addItem(new GameItem("테니스"));
+        game_adapter.addItem(new GameItem("유도"));
+        game_adapter.addItem(new GameItem("배드민턴"));
+        game_adapter.addItem(new GameItem("골프"));
         game_recycler_view.setAdapter(game_adapter);
 
 

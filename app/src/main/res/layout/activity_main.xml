@@ -12,14 +12,14 @@
         android:layout_height="135dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="65dp"
-        android:src="@drawable/title" />
+        android:src="@drawable/main_title" />
 
     <ImageView
         android:id="@+id/show_info_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/show_info_button"
+        android:src="@drawable/main_info_button"
         android:layout_marginTop="90dp"/>
 
     <ImageView
@@ -27,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/show_record_button"
+        android:src="@drawable/main_record_button"
         android:layout_marginTop="15dp"/>
 
     <ImageView
@@ -35,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/show_rank_button"
+        android:src="@drawable/main_rank_button"
         android:layout_marginTop="15dp"/>
 
     <ImageView
@@ -44,6 +44,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="70dp"
-        android:src="@drawable/record_match_button" />
+        android:src="@drawable/main_record_match_button" />
 
 </LinearLayout>
