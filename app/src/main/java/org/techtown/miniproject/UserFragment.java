@@ -1,12 +1,20 @@
 package org.techtown.miniproject;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,8 +23,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.tabs.TabLayout;
+import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
 import org.techtown.miniproject.adapters.UserInfoAdapter;
+import org.techtown.miniproject.items.GameItem;
 import org.techtown.miniproject.items.UserItem;
 
 import java.util.ArrayList;
@@ -26,6 +36,8 @@ import java.util.Comparator;
 public class UserFragment extends Fragment {
     RecyclerView user_recycler_view;
     ArrayList<UserItem> user_list;
+    SlidingUpPanelLayout sliding_layout;
+    Handler handler = new Handler();
 
     @Nullable
     @Override
@@ -75,6 +87,53 @@ public class UserFragment extends Fragment {
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
 
+            }
+        });
+
+        /* 유저 추가 클릭 이벤트 설정 */
+        sliding_layout = (SlidingUpPanelLayout) rootView.findViewById(R.id.user_layout);
+        InputMethodManager imm = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+
+        Button add_user = (Button) rootView.findViewById(R.id.add_user);
+        add_user.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sliding_layout.setPanelState(SlidingUpPanelLayout.PanelState.EXPANDED);
+
+                final Button btn_add = (Button) rootView.findViewById(R.id.add);
+                final EditText editTextName = (EditText) rootView.findViewById(R.id.new_user_name);
+                final EditText editTextAge = (EditText) rootView.findViewById(R.id.new_user_age);
+                final RadioGroup rGroup = (RadioGroup) rootView.findViewById(R.id.radio_group);
+
+                /* 패널 내의 추가 버튼 클릭 이벤트 설정 */
+                btn_add.setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View view) {
+                        String new_user_name = editTextName.getText().toString();
+                        int new_user_age = Integer.parseInt(editTextAge.getText().toString());
+
+                        String new_user_gender = null;
+                        switch (rGroup.getCheckedRadioButtonId()) {
+                            case R.id.radio_btn_male:
+                                new_user_gender = "Male";
+                            case R.id.radio_btn_female:
+                                new_user_gender = "Female";
+                            default:
+                                Toast.makeText(getContext(), "성별을 선택하세요.", Toast.LENGTH_SHORT).show();
+                        }
+
+                        user_adapter.addItem(new UserItem(new_user_name, new_user_age, new_user_gender, 0, 0));
+                        user_adapter.notifyItemChanged(-1);
+
+//                        imm.hideSoftInputFromWindow(editTextName.getWindowToken(), 0); // 키보드 내리기
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                sliding_layout.setPanelState(SlidingUpPanelLayout.PanelState.HIDDEN); // 패널 내리기
+                            }
+                        }, 50); // 0.05초 딜레이
+                    }
+                });
             }
         });
 

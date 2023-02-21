@@ -11,8 +11,10 @@
     app:umanoDragView="@id/drag_view"
     app:umanoPanelHeight="0dp"
     app:umanoShadowHeight="4dp"
-    app:umanoOverlay="true">
+    app:umanoOverlay="true"
+    app:umanoFadeColor="@android:color/transparent">
 
+    <!--    parent layout-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -102,6 +104,7 @@
 
     </LinearLayout>
 
+    <!--    child layout-->
     <LinearLayout
         android:id="@+id/drag_view"
         android:layout_width="match_parent"
@@ -119,20 +122,37 @@
             android:textStyle="bold"
             android:textSize="20dp"/>
 
-        <EditText
-            android:id="@+id/new_game_name"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:padding="13dp"
-            android:ems="10"
-            android:inputType="text"
-            android:hint="게임 이름을 입력하세요."
-            android:textSize="14dp"
-            android:textColor="#999999"
-            android:privateImeOptions="defaultInputmode=korean"
-            android:background="@drawable/tablelayout_button_background"/>
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:orientation="horizontal">
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:text="게임"-->
+<!--                android:textColor="#808080"-->
+<!--                android:textSize="15dp"/>-->
+
+            <EditText
+                android:id="@+id/new_game_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="13dp"
+                android:ems="10"
+                android:inputType="text"
+                android:hint="게임 이름을 입력하세요."
+                android:textSize="14dp"
+                android:textColor="#999999"
+                android:privateImeOptions="defaultInputmode=korean"
+                android:background="@drawable/edittext_round_corner_rectangle2"/>
+
+        </LinearLayout>
 
         <android.widget.Button
             android:id="@+id/add"

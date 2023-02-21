@@ -11,6 +11,7 @@
         <entry key="..\:/Users/JYKIM/AndroidStudioProjects/MiniProject/app/src/main/res/drawable/dimens.xml" value="0.19" />
         <entry key="..\:/Users/JYKIM/AndroidStudioProjects/MiniProject/app/src/main/res/drawable/edittext_cursor.xml" value="0.241" />
         <entry key="..\:/Users/JYKIM/AndroidStudioProjects/MiniProject/app/src/main/res/drawable/edittext_round_corner_rectangle.xml" value="0.2925" />
+        <entry key="..\:/Users/JYKIM/AndroidStudioProjects/MiniProject/app/src/main/res/drawable/edittext_round_corner_rectangle2.xml" value="0.254" />
         <entry key="..\:/Users/JYKIM/AndroidStudioProjects/MiniProject/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3055" />
         <entry key="..\:/Users/JYKIM/AndroidStudioProjects/MiniProject/app/src/main/res/drawable/idex_separator.xml" value="0.332" />
         <entry key="..\:/Users/JYKIM/AndroidStudioProjects/MiniProject/app/src/main/res/drawable/index_separator.xml" value="0.3055" />
@@ -54,7 +55,7 @@
         <entry key="..\:/Users/JYKIM/AndroidStudioProjects/MiniProject/app/src/main/res/layout/android_newscore_user2.xml" value="0.3609375" />
         <entry key="..\:/Users/JYKIM/AndroidStudioProjects/MiniProject/app/src/main/res/layout/dialog_add_game.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/JYKIM/AndroidStudioProjects/MiniProject/app/src/main/res/layout/fragment_game.xml" value="0.3333333333333333" />
-        <entry key="..\:/Users/JYKIM/AndroidStudioProjects/MiniProject/app/src/main/res/layout/fragment_user.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/JYKIM/AndroidStudioProjects/MiniProject/app/src/main/res/layout/fragment_user.xml" value="0.22" />
         <entry key="..\:/Users/JYKIM/AndroidStudioProjects/MiniProject/app/src/main/res/layout/game_item.xml" value="0.4125" />
         <entry key="..\:/Users/JYKIM/AndroidStudioProjects/MiniProject/app/src/main/res/layout/newScore_date.xml" value="1.3627450980392157" />
         <entry key="..\:/Users/JYKIM/AndroidStudioProjects/MiniProject/app/src/main/res/layout/rank_item.xml" value="0.4466666666666667" />

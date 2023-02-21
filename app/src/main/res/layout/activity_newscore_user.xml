@@ -13,7 +13,7 @@
     app:umanoShadowHeight="4dp"
     app:umanoOverlay="true">
 
-    <!--    parent view -->
+    <!--    parent layout -->
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/background_view"
@@ -259,7 +259,7 @@
 
     </LinearLayout>
 
-    <!--    drag view-->
+    <!--    child layout -->
     <LinearLayout
         android:id="@+id/drag_view"
         android:layout_width="match_parent"
@@ -284,6 +284,8 @@
                 android:id="@+id/user_recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:layout_gravity="center"/>
 
