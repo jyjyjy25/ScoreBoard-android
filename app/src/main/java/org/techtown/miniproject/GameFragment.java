@@ -4,19 +4,25 @@ import android.content.Context;
 import android.graphics.Color;
 import android.media.Image;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.tabs.TabLayout;
+import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
 import org.techtown.miniproject.activities.InfoActivity;
 import org.techtown.miniproject.adapters.GameAdapter;
@@ -31,6 +37,8 @@ public class GameFragment extends Fragment {
     RecyclerView game_recycler_view;
     InfoActivity activity;
     ArrayList<GameItem> game_list;
+    SlidingUpPanelLayout sliding_layout;
+    Handler handler = new Handler();
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -116,6 +124,39 @@ public class GameFragment extends Fragment {
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
 
+            }
+        });
+
+        /* 게임 추가 클릭 이벤트 설정 */
+        sliding_layout = (SlidingUpPanelLayout) rootView.findViewById(R.id.game_layout);
+        InputMethodManager imm = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+
+        Button add_game = (Button) rootView.findViewById(R.id.add_game);
+        add_game.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sliding_layout.setPanelState(SlidingUpPanelLayout.PanelState.EXPANDED);
+
+                final Button btn_add = (Button) rootView.findViewById(R.id.add);
+                final EditText editTextName = (EditText) rootView.findViewById(R.id.new_game_name);
+
+                /* 패널 내의 추가 버튼 클릭 이벤트 설정 */
+                btn_add.setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View view) {
+                        String new_game_name = editTextName.getText().toString();
+                        game_adapter.addItem(new GameItem(new_game_name));
+                        game_adapter.notifyItemChanged(-1);
+
+                        imm.hideSoftInputFromWindow(editTextName.getWindowToken(), 0); // 키보드 내리기
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                sliding_layout.setPanelState(SlidingUpPanelLayout.PanelState.HIDDEN); // 패널 내리기
+                            }
+                        },50); // 0.05초 딜레이
+                    }
+                });
             }
         });
 

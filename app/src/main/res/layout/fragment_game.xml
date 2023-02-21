@@ -1,87 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.sothree.slidinguppanel.SlidingUpPanelLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".GameFragment"
     android:id="@+id/game_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
-    android:orientation="vertical">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="5dp"
-        android:orientation="horizontal">
-
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"/>
-
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
-
-            <View
-                android:layout_width="135dp"
-                android:layout_height="match_parent"
-                android:background="@drawable/tab_sort_style"/>
-
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tabs"
-                android:layout_width="wrap_content"
-                android:layout_height="25dp"
-                android:layout_gravity="center"
-                app:tabMode="fixed"
-                app:tabGravity="start"
-                android:textColorPrimary="#999999"
-                android:textColorSecondary="#ffffff"
-                android:background="@drawable/tab_sort_unselected"
-                app:tabBackground="@drawable/tab_sort_style"
-                app:tabTextAppearance="@style/TabLayoutTextSize"
-                app:tabIndicatorHeight="0dp">
-
-                <com.google.android.material.tabs.TabItem
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="오름차순"/>
-
-                <com.google.android.material.tabs.TabItem
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="내림차순"/>
-
-            </com.google.android.material.tabs.TabLayout>
-
-        </FrameLayout>
-
-    </LinearLayout>
+    android:gravity="bottom"
+    app:umanoDragView="@id/drag_view"
+    app:umanoPanelHeight="0dp"
+    app:umanoShadowHeight="4dp"
+    app:umanoOverlay="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="5dp"
         android:orientation="vertical">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/game_recycler_view"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <View
+                    android:layout_width="135dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/tab_sort_style"/>
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    app:tabMode="fixed"
+                    app:tabGravity="start"
+                    android:textColorPrimary="#999999"
+                    android:textColorSecondary="#ffffff"
+                    android:background="@drawable/tab_sort_unselected"
+                    app:tabBackground="@drawable/tab_sort_style"
+                    app:tabTextAppearance="@style/TabLayoutTextSize"
+                    app:tabIndicatorHeight="0dp">
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="오름차순"/>
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="내림차순"/>
+
+                </com.google.android.material.tabs.TabLayout>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:layout_gravity="center"/>
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
 
-        <android.widget.Button
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/game_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="center"/>
+
+            <android.widget.Button
+                android:id="@+id/add_game"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/info_add_button_background"
+                style="?android:attr/borderlessButtonStyle"
+                android:text="게임 추가"
+                android:textColor="#ffffff"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/drag_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sliding_up_panel_corner_background"
+        android:orientation="vertical">
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:text="게임 추가"
+            android:textColor="#222222"
+            android:textStyle="bold"
+            android:textSize="20dp"/>
+
+        <EditText
+            android:id="@+id/new_game_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:padding="13dp"
+            android:ems="10"
+            android:inputType="text"
+            android:hint="게임 이름을 입력하세요."
+            android:textSize="14dp"
+            android:textColor="#999999"
+            android:privateImeOptions="defaultInputmode=korean"
+            android:background="@drawable/tablelayout_button_background"/>
+
+        <android.widget.Button
+            android:id="@+id/add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/info_add_button_background"
             style="?android:attr/borderlessButtonStyle"
-            android:text="게임 추가"
+            android:text="추가"
             android:textColor="#ffffff"
             android:textSize="18dp"
             android:textStyle="bold"/>
@@ -89,5 +152,4 @@
     </LinearLayout>
 
 
-
-</LinearLayout>
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>

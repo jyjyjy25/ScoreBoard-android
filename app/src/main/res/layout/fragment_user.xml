@@ -75,12 +75,13 @@
             android:layout_gravity="center"/>
 
         <android.widget.Button
+            android:id="@+id/add_user"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:background="@drawable/info_add_button_background"
             style="?android:attr/borderlessButtonStyle"
             android:text="유저 추가"
