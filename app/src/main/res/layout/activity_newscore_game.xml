@@ -4,117 +4,268 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".activities.NewscoreGameActivity"
-    android:id="@+id/sliding_layout"
+    android:id="@+id/top_sliding_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="bottom"
-    app:umanoDragView="@id/drag_view"
+    app:umanoDragView="@id/top_drag_view"
     app:umanoPanelHeight="0dp"
     app:umanoShadowHeight="4dp"
     app:umanoOverlay="true">
 
-    <!--    parent layout-->
-    <LinearLayout
+    <!--    Top Parent Layout-->
+    <com.sothree.slidinguppanel.SlidingUpPanelLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/background_view"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".activities.NewscoreGameActivity"
+        android:id="@+id/sliding_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#ffffff"
-        android:orientation="vertical">
+        android:gravity="bottom"
+        app:umanoDragView="@id/drag_view"
+        app:umanoPanelHeight="0dp"
+        app:umanoShadowHeight="4dp"
+        app:umanoOverlay="true">
 
+        <!--    parent layout-->
         <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/background_view"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="match_parent"
             android:background="#ffffff"
             android:orientation="vertical">
 
-            <ImageView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/newscore_title"/>
+                android:layout_height="70dp"
+                android:background="#ffffff"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/newscore_title"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@drawable/title_separator"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="게임을 선택해 주세요"
+                    android:textColor="#222222"
+                    android:textStyle="bold"
+                    android:textSize="20dp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"/>
+
+                <android.widget.Button
+                    android:id="@+id/game_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:padding="13dp"
+                    android:drawableRight="@drawable/arrow_resize"
+                    android:background="@drawable/edittext_round_corner_rectangle"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:text="게임"
+                    android:textAlignment="viewStart"
+                    android:textColor="#999999"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:layout_marginBottom="3dp"
+                    android:text="2/3"/>
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:progressDrawable="@drawable/progress_background"
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:layout_marginBottom="8dp"
+                    android:progress="2"
+                    android:max="3" />
+
+                <android.widget.Button
+                    android:id="@+id/next_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/next_button_background"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:text="다음"
+                    android:textColor="#ffffff"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="3dp"
-            android:background="@drawable/title_separator"/>
-
+        <!--    child layout-->
         <LinearLayout
+            android:id="@+id/drag_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/sliding_up_panel_corner_background"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="20dp"
                 android:text="게임을 선택해 주세요"
                 android:textColor="#222222"
                 android:textStyle="bold"
                 android:textSize="20dp"/>
 
-            <View
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="20dp"/>
+                android:layout_height="wrap_content">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:stretchColumns="0, 1, 2">
+
+                    <TableRow>
+                        <android.widget.Button
+                            android:id="@+id/btn1"
+                            android:layout_width="0dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/tablelayout_button_background"
+                            style="?android:attr/borderlessButtonStyle"
+                            android:text="가위바위보"/>
+                        <android.widget.Button
+                            android:id="@+id/btn2"
+                            android:layout_width="0dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/tablelayout_button_background"
+                            style="?android:attr/borderlessButtonStyle"
+                            android:text="묵찌빠"/>
+                        <android.widget.Button
+                            android:id="@+id/btn3"
+                            android:layout_width="0dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/tablelayout_button_background"
+                            style="?android:attr/borderlessButtonStyle"
+                            android:text="탁구"/>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_marginTop="5dp">
+                        <android.widget.Button
+                            android:id="@+id/btn4"
+                            android:layout_width="0dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/tablelayout_button_background"
+                            style="?android:attr/borderlessButtonStyle"
+                            android:text="1"/>
+                        <android.widget.Button
+                            android:id="@+id/btn5"
+                            android:layout_width="0dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/tablelayout_button_background"
+                            style="?android:attr/borderlessButtonStyle"
+                            android:text="2"/>
+                        <android.widget.Button
+                            android:id="@+id/btn6"
+                            android:layout_width="0dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/tablelayout_button_background"
+                            style="?android:attr/borderlessButtonStyle"
+                            android:text="3"/>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_marginTop="5dp">
+                        <android.widget.Button
+                            android:id="@+id/btn7"
+                            android:layout_width="0dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/tablelayout_button_background"
+                            style="?android:attr/borderlessButtonStyle"
+                            android:text="4"/>
+                        <android.widget.Button
+                            android:id="@+id/btn8"
+                            android:layout_width="0dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/tablelayout_button_background"
+                            style="?android:attr/borderlessButtonStyle"
+                            android:text="5"/>
+                        <android.widget.Button
+                            android:id="@+id/btn9"
+                            android:layout_width="0dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/tablelayout_button_background"
+                            style="?android:attr/borderlessButtonStyle"
+                            android:text="6"/>
+                    </TableRow>
+
+                </TableLayout>
+
+            </ScrollView>
 
             <android.widget.Button
-                android:id="@+id/game_name"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:padding="13dp"
-                android:drawableRight="@drawable/arrow_resize"
-                android:background="@drawable/edittext_round_corner_rectangle"
-                style="?android:attr/borderlessButtonStyle"
-                android:text="게임"
-                android:textAlignment="viewStart"
-                android:textColor="#999999"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"/>
-
-            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="right"
-                android:layout_marginBottom="3dp"
-                android:text="2/3"/>
-
-            <ProgressBar
-                android:id="@+id/progressBar"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:progressDrawable="@drawable/progress_background"
-                android:layout_width="match_parent"
-                android:layout_height="3dp"
-                android:layout_marginBottom="8dp"
-                android:progress="2"
-                android:max="3" />
-
-            <android.widget.Button
-                android:id="@+id/next_button"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="15dp"
-                android:background="@drawable/next_button_background"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/info_add_button_background"
                 style="?android:attr/borderlessButtonStyle"
-                android:text="다음"
+                android:text="게임 추가"
                 android:textColor="#ffffff"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+                android:textSize="18dp"
+                android:textStyle="bold"/>
 
         </LinearLayout>
 
-    </LinearLayout>
+    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
 
-    <!--    child layout-->
+    <!--    Top Child Layout-->
     <LinearLayout
-        android:id="@+id/drag_view"
+        android:id="@+id/top_drag_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/sliding_up_panel_corner_background"
@@ -124,113 +275,38 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:text="게임을 선택해 주세요"
+            android:gravity="center"
+            android:text="게임 추가"
             android:textColor="#222222"
             android:textStyle="bold"
             android:textSize="20dp"/>
 
-        <ScrollView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:orientation="horizontal">
 
-            <TableLayout
+            <EditText
+                android:id="@+id/new_game_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:stretchColumns="0, 1, 2">
+                android:padding="13dp"
+                android:ems="10"
+                android:inputType="text"
+                android:hint="게임 이름을 입력하세요."
+                android:textSize="14dp"
+                android:textColor="#999999"
+                android:privateImeOptions="defaultInputmode=korean"
+                android:background="@drawable/edittext_round_corner_rectangle2"/>
 
-                <TableRow>
-                    <android.widget.Button
-                        android:id="@+id/btn1"
-                        android:layout_width="0dp"
-                        android:layout_marginRight="3dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/tablelayout_button_background"
-                        style="?android:attr/borderlessButtonStyle"
-                        android:text="가위바위보"/>
-                    <android.widget.Button
-                        android:id="@+id/btn2"
-                        android:layout_width="0dp"
-                        android:layout_marginLeft="3dp"
-                        android:layout_marginRight="3dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/tablelayout_button_background"
-                        style="?android:attr/borderlessButtonStyle"
-                        android:text="묵찌빠"/>
-                    <android.widget.Button
-                        android:id="@+id/btn3"
-                        android:layout_width="0dp"
-                        android:layout_marginLeft="3dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/tablelayout_button_background"
-                        style="?android:attr/borderlessButtonStyle"
-                        android:text="탁구"/>
-                </TableRow>
-
-                <TableRow
-                    android:layout_marginTop="5dp">
-                    <android.widget.Button
-                        android:id="@+id/btn4"
-                        android:layout_width="0dp"
-                        android:layout_marginRight="3dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/tablelayout_button_background"
-                        style="?android:attr/borderlessButtonStyle"
-                        android:text="1"/>
-                    <android.widget.Button
-                        android:id="@+id/btn5"
-                        android:layout_width="0dp"
-                        android:layout_marginLeft="3dp"
-                        android:layout_marginRight="3dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/tablelayout_button_background"
-                        style="?android:attr/borderlessButtonStyle"
-                        android:text="2"/>
-                    <android.widget.Button
-                        android:id="@+id/btn6"
-                        android:layout_width="0dp"
-                        android:layout_marginLeft="3dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/tablelayout_button_background"
-                        style="?android:attr/borderlessButtonStyle"
-                        android:text="3"/>
-                </TableRow>
-
-                <TableRow
-                    android:layout_marginTop="5dp">
-                    <android.widget.Button
-                        android:id="@+id/btn7"
-                        android:layout_width="0dp"
-                        android:layout_marginRight="3dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/tablelayout_button_background"
-                        style="?android:attr/borderlessButtonStyle"
-                        android:text="4"/>
-                    <android.widget.Button
-                        android:id="@+id/btn8"
-                        android:layout_width="0dp"
-                        android:layout_marginLeft="3dp"
-                        android:layout_marginRight="3dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/tablelayout_button_background"
-                        style="?android:attr/borderlessButtonStyle"
-                        android:text="5"/>
-                    <android.widget.Button
-                        android:id="@+id/btn9"
-                        android:layout_width="0dp"
-                        android:layout_marginLeft="3dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/tablelayout_button_background"
-                        style="?android:attr/borderlessButtonStyle"
-                        android:text="6"/>
-                </TableRow>
-
-            </TableLayout>
-
-        </ScrollView>
+        </LinearLayout>
 
         <android.widget.Button
+            android:id="@+id/add"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
@@ -239,11 +315,12 @@
             android:layout_marginBottom="20dp"
             android:background="@drawable/info_add_button_background"
             style="?android:attr/borderlessButtonStyle"
-            android:text="게임 추가"
+            android:text="추가"
             android:textColor="#ffffff"
             android:textSize="18dp"
             android:textStyle="bold"/>
 
     </LinearLayout>
+
 
 </com.sothree.slidinguppanel.SlidingUpPanelLayout>

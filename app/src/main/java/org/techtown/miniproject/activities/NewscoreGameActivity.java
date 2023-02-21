@@ -1,6 +1,7 @@
 package org.techtown.miniproject.activities;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -8,7 +9,9 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -22,16 +25,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
 import org.techtown.miniproject.R;
+import org.techtown.miniproject.items.GameItem;
 
 public class NewscoreGameActivity extends AppCompatActivity {
     boolean isExistBlank = false;
     private SharedPreferences preferences;
+    SlidingUpPanelLayout sliding_layout;
+    SlidingUpPanelLayout top_sliding_layout;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_newscore_game);
 
-        SlidingUpPanelLayout sliding_layout = (SlidingUpPanelLayout) findViewById(R.id.sliding_layout);
+        sliding_layout = (SlidingUpPanelLayout) findViewById(R.id.sliding_layout);
 
         /* 게임 버튼 이벤트 */
         Button game_button = (Button) findViewById(R.id.game_name);
@@ -66,6 +72,38 @@ public class NewscoreGameActivity extends AppCompatActivity {
             }
         });
 
+        /* 게임 추가 클릭 이벤트 설정 */
+//        top_sliding_layout = (SlidingUpPanelLayout) findViewById(R.id.top_sliding_layout);
+//        InputMethodManager imm = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+//
+//        Button add_game = (Button) findViewById(R.id.add_game);
+//        add_game.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                top_sliding_layout.setPanelState(SlidingUpPanelLayout.PanelState.EXPANDED);
+//
+//                final Button btn_add = (Button) findViewById(R.id.add);
+//                final EditText editTextName = (EditText) findViewById(R.id.new_game_name);
+//
+//                /* 패널 내의 추가 버튼 클릭 이벤트 설정 */
+//                btn_add.setOnClickListener(new View.OnClickListener(){
+//                    @Override
+//                    public void onClick(View view) {
+//                        String new_game_name = editTextName.getText().toString();
+//                        game_adapter.addItem(new GameItem(new_game_name));
+//                        game_adapter.notifyItemChanged(-1);
+//
+//                        imm.hideSoftInputFromWindow(editTextName.getWindowToken(), 0); // 키보드 내리기
+//                        handler.postDelayed(new Runnable() {
+//                            @Override
+//                            public void run() {
+//                                top_sliding_layout.setPanelState(SlidingUpPanelLayout.PanelState.HIDDEN); // 패널 내리기
+//                            }
+//                        },50); // 0.05초 딜레이
+//                    }
+//                });
+//            }
+//        });
 
 //        Button.OnClickListener onClickListener = new Button.OnClickListener() {
 //            @Override

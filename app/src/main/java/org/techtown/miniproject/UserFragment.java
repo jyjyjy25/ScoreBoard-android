@@ -125,7 +125,7 @@ public class UserFragment extends Fragment {
                         user_adapter.addItem(new UserItem(new_user_name, new_user_age, new_user_gender, 0, 0));
                         user_adapter.notifyItemChanged(-1);
 
-//                        imm.hideSoftInputFromWindow(editTextName.getWindowToken(), 0); // 키보드 내리기
+                        imm.hideSoftInputFromWindow(editTextAge.getWindowToken(), 0); // 키보드 내리기
                         handler.postDelayed(new Runnable() {
                             @Override
                             public void run() {

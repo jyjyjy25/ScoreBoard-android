@@ -15,6 +15,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,7 +32,7 @@ import org.techtown.miniproject.items.UserItem;
 public class NewscoreUserActivity extends AppCompatActivity {
     RecyclerView user_recycler_view;
     Handler handler = new Handler();
-
+    SlidingUpPanelLayout top_sliding_layout;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_newscore_user);
@@ -168,6 +169,52 @@ public class NewscoreUserActivity extends AppCompatActivity {
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 setResult(Activity.RESULT_OK, intent);
                 startActivity(intent);
+            }
+        });
+
+        /* 유저 추가 클릭 이벤트 설정 */
+        top_sliding_layout = (SlidingUpPanelLayout) findViewById(R.id.top_sliding_layout);
+
+        Button add_user = (Button) findViewById(R.id.add_user);
+        add_user.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                top_sliding_layout.setPanelState(SlidingUpPanelLayout.PanelState.EXPANDED);
+
+                final Button btn_add = (Button) findViewById(R.id.add);
+                final EditText editTextName = (EditText) findViewById(R.id.new_user_name);
+                final EditText editTextAge = (EditText) findViewById(R.id.new_user_age);
+                final RadioGroup rGroup = (RadioGroup) findViewById(R.id.radio_group);
+
+                /* 패널 내의 추가 버튼 클릭 이벤트 설정 */
+                btn_add.setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View view) {
+                        String new_user_name = editTextName.getText().toString();
+                        int new_user_age = Integer.parseInt(editTextAge.getText().toString());
+
+                        String new_user_gender = null;
+                        switch (rGroup.getCheckedRadioButtonId()) {
+                            case R.id.radio_btn_male:
+                                new_user_gender = "Male";
+                            case R.id.radio_btn_female:
+                                new_user_gender = "Female";
+                            default:
+                                Toast.makeText(getApplicationContext(), "성별을 선택하세요.", Toast.LENGTH_SHORT).show();
+                        }
+
+                        user_adapter.addItem(new UserItem(new_user_name, new_user_age, new_user_gender, 0, 0));
+                        user_adapter.notifyItemChanged(-1);
+
+                        imm.hideSoftInputFromWindow(editTextAge.getWindowToken(), 0); // 키보드 내리기
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                top_sliding_layout.setPanelState(SlidingUpPanelLayout.PanelState.HIDDEN); // 패널 내리기
+                            }
+                        }, 50); // 0.05초 딜레이
+                    }
+                });
             }
         });
 

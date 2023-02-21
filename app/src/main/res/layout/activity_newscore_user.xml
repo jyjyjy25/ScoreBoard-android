@@ -4,281 +4,293 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".activities.NewscoreUserActivity"
-    android:id="@+id/sliding_layout"
+    android:id="@+id/top_sliding_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="bottom"
-    app:umanoDragView="@id/drag_view"
+    app:umanoDragView="@id/top_drag_view"
     app:umanoPanelHeight="0dp"
     app:umanoShadowHeight="4dp"
     app:umanoOverlay="true">
 
-    <!--    parent layout -->
-    <LinearLayout
+    <!--    Top Parent Layout-->
+    <com.sothree.slidinguppanel.SlidingUpPanelLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/background_view"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".activities.NewscoreUserActivity"
+        android:id="@+id/sliding_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#ffffff"
-        android:orientation="vertical">
+        android:gravity="bottom"
+        app:umanoDragView="@id/drag_view"
+        app:umanoScrollableView="@+id/user_recycler_view"
+        app:umanoPanelHeight="0dp"
+        app:umanoShadowHeight="4dp"
+        app:umanoOverlay="true">
 
+        <!--    parent layout -->
         <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/background_view"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="match_parent"
             android:background="#ffffff"
             android:orientation="vertical">
 
-            <ImageView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/newscore_title"/>
+                android:layout_height="70dp"
+                android:background="#ffffff"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/newscore_title"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@drawable/title_separator"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="유저 정보를 입력해 주세요"
+                    android:textStyle="bold"
+                    android:textColor="#222222"
+                    android:textSize="20dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="게임에 참여한 유저의 정보를 입력하시면 됩니다."
+                    android:textColor="#666666"
+                    android:textSize="13dp"/>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="유저1"
+                    android:textColor="#999999"
+                    android:textSize="18dp"/>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginBottom="7dp"
+                    android:background="@drawable/separator"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:text="유저1 이름"
+                        android:textColor="#808080"
+                        android:textSize="15dp"/>
+
+                    <android.widget.Button
+                        android:id="@+id/user1_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="20dp"
+                        android:padding="13dp"
+                        android:drawableRight="@drawable/arrow_resize"
+                        android:background="@drawable/edittext_round_corner_rectangle"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:text="이름"
+                        android:textAlignment="viewStart"
+                        android:textColor="#999999"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:text="유저1 점수"
+                        android:textColor="#808080"
+                        android:textSize="15dp" />
+
+                    <EditText
+                        android:id="@+id/user1_score"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="20dp"
+                        android:padding="13dp"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:hint="점수"
+                        android:textSize="14dp"
+                        android:textColor="#999999"
+                        android:background="@drawable/edittext_round_corner_rectangle"/>
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="유저2"
+                    android:textColor="#999999"
+                    android:textSize="18dp"/>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginBottom="7dp"
+                    android:background="@drawable/separator"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:text="유저2 이름"
+                        android:textColor="#808080"
+                        android:textSize="15dp"/>
+
+                    <android.widget.Button
+                        android:id="@+id/user2_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="20dp"
+                        android:padding="13dp"
+                        android:drawableRight="@drawable/arrow_resize"
+                        android:background="@drawable/edittext_round_corner_rectangle"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:text="이름"
+                        android:textAlignment="viewStart"
+                        android:textColor="#999999"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:text="유저2 점수"
+                        android:textColor="#808080"
+                        android:textSize="15dp"/>
+
+                    <EditText
+                        android:id="@+id/user2_score"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="20dp"
+                        android:padding="13dp"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:hint="점수"
+                        android:imeOptions="actionDone"
+                        android:textSize="14dp"
+                        android:textColor="#999999"
+                        android:background="@drawable/edittext_round_corner_rectangle"/>
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:layout_marginBottom="3dp"
+                    android:text="3/3"/>
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:progressDrawable="@drawable/progress_background"
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:layout_marginBottom="8dp"
+                    android:progress="3"
+                    android:max="3" />
+
+                <android.widget.Button
+                    android:id="@+id/save_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/next_button_background"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:text="저장"
+                    android:textColor="#ffffff"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="3dp"
-            android:background="@drawable/title_separator"/>
-
+        <!--    child layout -->
         <LinearLayout
+            android:id="@+id/drag_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/sliding_up_panel_corner_background"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="유저 정보를 입력해 주세요"
-                android:textStyle="bold"
+                android:layout_margin="20dp"
+                android:text="유저를 선택해 주세요"
                 android:textColor="#222222"
+                android:textStyle="bold"
                 android:textSize="20dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="게임에 참여한 유저의 정보를 입력하시면 됩니다."
-                android:textColor="#666666"
-                android:textSize="13dp"/>
-
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:text="유저1"
-                android:textColor="#999999"
-                android:textSize="18dp"/>
-
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="2dp"
-                android:layout_marginTop="3dp"
-                android:layout_marginBottom="7dp"
-                android:background="@drawable/separator"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_margin="5dp"
-                    android:text="유저1 이름"
-                    android:textColor="#808080"
-                    android:textSize="15dp"/>
-
-                <android.widget.Button
-                    android:id="@+id/user1_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="45dp"
-                    android:layout_marginLeft="20dp"
-                    android:padding="13dp"
-                    android:drawableRight="@drawable/arrow_resize"
-                    android:background="@drawable/edittext_round_corner_rectangle"
-                    style="?android:attr/borderlessButtonStyle"
-                    android:text="이름"
-                    android:textAlignment="viewStart"
-                    android:textColor="#999999"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_margin="5dp"
-                    android:text="유저1 점수"
-                    android:textColor="#808080"
-                    android:textSize="15dp" />
-
-                <EditText
-                    android:id="@+id/user1_score"
-                    android:layout_width="match_parent"
-                    android:layout_height="45dp"
-                    android:layout_marginLeft="20dp"
-                    android:padding="13dp"
-                    android:ems="10"
-                    android:inputType="number"
-                    android:hint="점수"
-                    android:textSize="14dp"
-                    android:textColor="#999999"
-                    android:background="@drawable/edittext_round_corner_rectangle"/>
-
-
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="유저2"
-                android:textColor="#999999"
-                android:textSize="18dp"/>
-
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="2dp"
-                android:layout_marginTop="3dp"
-                android:layout_marginBottom="7dp"
-                android:background="@drawable/separator"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_margin="5dp"
-                    android:text="유저2 이름"
-                    android:textColor="#808080"
-                    android:textSize="15dp"/>
-
-                <android.widget.Button
-                    android:id="@+id/user2_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="45dp"
-                    android:layout_marginLeft="20dp"
-                    android:padding="13dp"
-                    android:drawableRight="@drawable/arrow_resize"
-                    android:background="@drawable/edittext_round_corner_rectangle"
-                    style="?android:attr/borderlessButtonStyle"
-                    android:text="이름"
-                    android:textAlignment="viewStart"
-                    android:textColor="#999999"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_margin="5dp"
-                    android:text="유저2 점수"
-                    android:textColor="#808080"
-                    android:textSize="15dp"/>
-
-                <EditText
-                    android:id="@+id/user2_score"
-                    android:layout_width="match_parent"
-                    android:layout_height="45dp"
-                    android:layout_marginLeft="20dp"
-                    android:padding="13dp"
-                    android:ems="10"
-                    android:inputType="number"
-                    android:hint="점수"
-                    android:imeOptions="actionDone"
-                    android:textSize="14dp"
-                    android:textColor="#999999"
-                    android:background="@drawable/edittext_round_corner_rectangle"/>
-
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="right"
-                android:layout_marginBottom="3dp"
-                android:text="3/3"/>
-
-            <ProgressBar
-                android:id="@+id/progressBar"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:progressDrawable="@drawable/progress_background"
-                android:layout_width="match_parent"
-                android:layout_height="3dp"
-                android:layout_marginBottom="8dp"
-                android:progress="3"
-                android:max="3" />
-
-            <android.widget.Button
-                android:id="@+id/save_button"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="15dp"
-                android:background="@drawable/next_button_background"
-                style="?android:attr/borderlessButtonStyle"
-                android:text="저장"
-                android:textColor="#ffffff"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <!--    child layout -->
-    <LinearLayout
-        android:id="@+id/drag_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/sliding_up_panel_corner_background"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:text="유저를 선택해 주세요"
-            android:textColor="#222222"
-            android:textStyle="bold"
-            android:textSize="20dp"/>
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/user_recycler_view"
@@ -289,9 +301,150 @@
                 android:layout_weight="1"
                 android:layout_gravity="center"/>
 
-        </ScrollView>
+
+            <android.widget.Button
+                android:id="@+id/add_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/info_add_button_background"
+                style="?android:attr/borderlessButtonStyle"
+                android:text="유저 추가"
+                android:textColor="#ffffff"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+
+    <!--    Top Child Layout-->
+    <LinearLayout
+        android:id="@+id/top_drag_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sliding_up_panel_corner_background"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:text="유저 추가"
+            android:textColor="#222222"
+            android:textStyle="bold"
+            android:textSize="20dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="35dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="이름"
+                android:textColor="#808080"
+                android:textSize="15dp"/>
+
+            <EditText
+                android:id="@+id/new_user_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:padding="13dp"
+                android:ems="10"
+                android:inputType="text"
+                android:hint="유저 이름을 입력해 주세요."
+                android:textSize="14dp"
+                android:textColor="#999999"
+                android:privateImeOptions="defaultInputmode=korean"
+                android:background="@drawable/edittext_round_corner_rectangle2"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="35dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="나이"
+                android:textColor="#808080"
+                android:textSize="15dp"/>
+
+            <EditText
+                android:id="@+id/new_user_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:padding="13dp"
+                android:ems="5"
+                android:inputType="number"
+                android:hint="나이"
+                android:textSize="14dp"
+                android:textColor="#999999"
+                android:background="@drawable/edittext_round_corner_rectangle2"/>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="성별"
+                android:textColor="#808080"
+                android:textSize="15dp"/>
+
+            <RadioGroup
+                android:id="@+id/radio_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radio_btn_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:buttonTint="@color/MainColorTertiary"
+                    android:checked="true"
+                    android:text="남성"/>
+
+                <RadioButton
+                    android:id="@+id/radio_btn_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:buttonTint="@color/MainColorTertiary"
+                    android:text="여성"/>
+
+            </RadioGroup>
+
+        </LinearLayout>
 
         <android.widget.Button
+            android:id="@+id/add"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
@@ -300,12 +453,12 @@
             android:layout_marginBottom="20dp"
             android:background="@drawable/info_add_button_background"
             style="?android:attr/borderlessButtonStyle"
-            android:text="유저 추가"
+            android:text="추가"
             android:textColor="#ffffff"
             android:textSize="18dp"
             android:textStyle="bold"/>
 
     </LinearLayout>
 
-
 </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+
