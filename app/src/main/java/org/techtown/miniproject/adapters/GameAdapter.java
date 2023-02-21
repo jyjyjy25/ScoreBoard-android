@@ -11,11 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import org.techtown.miniproject.items.GameItem;
 import org.techtown.miniproject.R;
-import org.techtown.miniproject.items.UserItem;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 
 public class GameAdapter extends RecyclerView.Adapter<GameAdapter.ViewHolder>{
 

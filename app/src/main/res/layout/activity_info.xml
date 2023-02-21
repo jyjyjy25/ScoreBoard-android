@@ -36,6 +36,19 @@
         app:tabSelectedTextColor="@color/MainColorPrimary"
         app:tabIndicatorColor="@color/MainColorPrimary">
 
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="게임"
+            android:icon="@drawable/ic_game"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:text="유저"
+            android:icon="@drawable/ic_user"/>
+
     </com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager.widget.ViewPager

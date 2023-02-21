@@ -17,8 +17,6 @@ import org.techtown.miniproject.activities.DetailUserActivity;
 import org.techtown.miniproject.items.UserItem;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 
 public class UserInfoAdapter extends RecyclerView.Adapter<UserInfoAdapter.ViewHolder>{
     Context context;

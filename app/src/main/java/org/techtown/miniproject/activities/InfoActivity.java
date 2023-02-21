@@ -3,7 +3,6 @@ package org.techtown.miniproject.activities;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
-import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
@@ -22,12 +21,8 @@ public class InfoActivity extends AppCompatActivity {
 
         /* tab 추가 */
         tabs = (TabLayout) findViewById(R.id.tabs);
-        tabs.addTab(tabs.newTab().setText("게임"));
-        tabs.addTab(tabs.newTab().setText("유저"));
 
-        /* tab 아이콘 색상 설정 */
-        tabs.getTabAt(0).setIcon(R.drawable.ic_game);
-        tabs.getTabAt(1).setIcon(R.drawable.ic_user);
+        /* tab 선택된 아이콘 기본 색상 설정 */
         tabs.getTabAt(0).getIcon().setColorFilter(Color.parseColor("#FF699565"), PorterDuff.Mode.SRC_IN);
 
         /* ViewPager 설정 */
