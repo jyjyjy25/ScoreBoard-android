@@ -1,18 +1,17 @@
 package org.techtown.miniproject.items;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public class ScoreItem {
 
-    Date match_date;
+    LocalDate match_date;
     String game_name;
     String user1_name;
     String user2_name;
     int user1_score;
     int user2_score;
 
-    public ScoreItem(Date match_date, String game_name, String user1_name, String user2_name, int user1_score, int user2_score) {
+    public ScoreItem(LocalDate match_date, String game_name, String user1_name, String user2_name, int user1_score, int user2_score) {
         this.match_date = match_date;
         this.game_name = game_name;
         this.user1_name = user1_name;
@@ -21,11 +20,11 @@ public class ScoreItem {
         this.user2_score = user2_score;
     }
 
-    public Date getMatch_date() {
+    public LocalDate getMatch_date() {
         return match_date;
     }
 
-    public void setMatch_date(Date match_date) {
+    public void setMatch_date(LocalDate match_date) {
         this.match_date = match_date;
     }
 

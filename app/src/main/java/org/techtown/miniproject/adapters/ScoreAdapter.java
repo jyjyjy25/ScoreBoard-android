@@ -2,6 +2,7 @@ package org.techtown.miniproject.adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.os.Build;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
 import org.techtown.miniproject.R;
@@ -17,6 +19,8 @@ import org.techtown.miniproject.items.ScoreItem;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -40,6 +44,7 @@ public class ScoreAdapter extends RecyclerView.Adapter<ScoreAdapter.ViewHolder>{
         return viewHolder;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onBindViewHolder(@NonNull ScoreAdapter.ViewHolder holder, int position) {
         ScoreItem item = items.get(position);
@@ -77,17 +82,12 @@ public class ScoreAdapter extends RecyclerView.Adapter<ScoreAdapter.ViewHolder>{
             user2_score = itemView.findViewById(R.id.user2_score) ;
         }
 
-        @SuppressLint({"SimpleDateFormat", "SetTextI18n"})
+        @RequiresApi(api = Build.VERSION_CODES.O)
         public void setItem(ScoreItem item) {
-            Date date = item.getMatch_date();
-            Log.d("Date", String.valueOf(date));
-
-            SimpleDateFormat formatter = new SimpleDateFormat("yyyy");
-            String yy = String.valueOf(Integer.parseInt(formatter.format(date))-1900);
-            formatter = new SimpleDateFormat("MM");
-            String mm = (Integer.parseInt(formatter.format(date))-1) == 0 ? String.valueOf(12) : String.valueOf(Integer.parseInt(formatter.format(date))-1);
-            formatter = new SimpleDateFormat("dd");
-            String dd = formatter.format(date);
+            LocalDate date = item.getMatch_date();
+            String yy = date.format(DateTimeFormatter.ofPattern("yyyy"));
+            String mm = date.format(DateTimeFormatter.ofPattern("MM"));
+            String dd = date.format(DateTimeFormatter.ofPattern("dd"));
 
             match_date.setText(yy + ". " + mm + ". " + dd + ".");
             game_name.setText(item.getGame_name());

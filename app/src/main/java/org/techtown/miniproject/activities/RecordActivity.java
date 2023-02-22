@@ -25,6 +25,7 @@ import org.techtown.miniproject.adapters.ScoreAdapter;
 import org.techtown.miniproject.items.ScoreItem;
 
 import java.sql.Time;
+import java.time.Duration;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -53,10 +54,10 @@ public class RecordActivity extends AppCompatActivity {
         score_recycler_view.setLayoutManager(score_layoutManager);
         ScoreAdapter score_adapter = new ScoreAdapter(getApplicationContext());
 
-        score_adapter.addItem(new ScoreItem(new Date(2022,10,18), "가위바위보", "Gabe", "June", 4, 0));
-        score_adapter.addItem(new ScoreItem(new Date(2022,11,21), "탁구", "Nowee", "Ann", 3, 1));
-        score_adapter.addItem(new ScoreItem(new Date(2020,04,25), "농구", "Echo", "Elly", 2, 3));
-        score_adapter.addItem(new ScoreItem(new Date(2021,12,12), "배드민턴", "Nowee", "Julia", 1, 4));
+        score_adapter.addItem(new ScoreItem(LocalDate.of(2022, 10, 18), "가위바위보", "Gabe", "June", 4, 0));
+        score_adapter.addItem(new ScoreItem(LocalDate.of(2022,11,21), "탁구", "Nowee", "Ann", 3, 1));
+        score_adapter.addItem(new ScoreItem(LocalDate.of(2020,04,25), "농구", "Echo", "Elly", 2, 3));
+        score_adapter.addItem(new ScoreItem(LocalDate.of(2021,12,12), "배드민턴", "Nowee", "Julia", 1, 4));
         score_recycler_view.setAdapter(score_adapter);
 
         /* dropdown 설정 */
@@ -81,9 +82,10 @@ public class RecordActivity extends AppCompatActivity {
 
         /* 날짜순&게임순 구현 */
         Comparator<ScoreItem> DateAsc = new Comparator<ScoreItem>() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public int compare(ScoreItem o1, ScoreItem o2) {
-                return Long.valueOf(o1.getMatch_date().getTime()).compareTo(o2.getMatch_date().getTime());
+                return o1.getMatch_date().compareTo(o2.getMatch_date());
             }
         };
         Comparator<ScoreItem> GameAsc = new Comparator<ScoreItem>() {
