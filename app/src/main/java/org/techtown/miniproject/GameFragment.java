@@ -1,6 +1,7 @@
 package org.techtown.miniproject;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.media.Image;
 import android.os.Bundle;
@@ -70,16 +71,13 @@ public class GameFragment extends Fragment {
         LinearLayoutManager game_layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         game_recycler_view.setLayoutManager(game_layoutManager);
 
-        GameAdapter game_adapter = new GameAdapter(getActivity());
-        game_adapter.addItem(new GameItem("가위바위보"));
-        game_adapter.addItem(new GameItem("탁구"));
-        game_adapter.addItem(new GameItem("볼링"));
-        game_adapter.addItem(new GameItem("테니스"));
-        game_adapter.addItem(new GameItem("유도"));
-        game_adapter.addItem(new GameItem("배드민턴"));
-        game_adapter.addItem(new GameItem("골프"));
-        game_recycler_view.setAdapter(game_adapter);
+        String[] gameList = getResources().getStringArray(R.array.game);
 
+        GameAdapter game_adapter = new GameAdapter(getActivity());
+        for(int i=0; i<gameList.length; i++) {
+            game_adapter.addItem(new GameItem(gameList[i]));
+        }
+        game_recycler_view.setAdapter(game_adapter);
 
         Comparator<GameItem> Asc = new Comparator<GameItem>() {
             @Override

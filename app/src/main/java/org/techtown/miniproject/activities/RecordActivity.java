@@ -1,6 +1,7 @@
 package org.techtown.miniproject.activities;
 
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -8,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Spinner;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -20,12 +22,18 @@ import org.techtown.miniproject.R;
 import org.techtown.miniproject.adapters.ScoreAdapter;
 import org.techtown.miniproject.items.ScoreItem;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+
 public class RecordActivity extends AppCompatActivity {
     RecyclerView score_recycler_view;
     Spinner spinner;
     AutoCompleteTextView autoCompleteTextview;
     TextInputLayout textInputLayout;
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_record);
@@ -46,12 +54,15 @@ public class RecordActivity extends AppCompatActivity {
         score_recycler_view.setAdapter(score_adapter);
 
         /* dropdown 설정 */
-        String[] Games = getResources().getStringArray(R.array.game);
+        ArrayList gameList = new ArrayList(Arrays.asList(getResources().getStringArray(R.array.game)));
+        gameList.sort(Comparator.naturalOrder());
+        gameList.add(0, "전체");
+        String[] games = (String[]) gameList.toArray(new String[gameList.size()]);
 
         textInputLayout = findViewById(R.id.dateFilterContainer);
         autoCompleteTextview = findViewById(R.id.datesFilterSpinner);
 
-        ArrayAdapter<String> itemAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, Games);
+        ArrayAdapter<String> itemAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, games);
         autoCompleteTextview.setAdapter(itemAdapter);
         autoCompleteTextview.setDropDownBackgroundDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.bg_dropdown, null));
 
