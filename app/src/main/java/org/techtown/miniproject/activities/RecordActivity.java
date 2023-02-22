@@ -9,6 +9,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -44,30 +45,15 @@ public class RecordActivity extends AppCompatActivity {
 
         score_recycler_view.setAdapter(score_adapter);
 
-        /* 스피너 설정 */
-//        spinner = findViewById(R.id.spinner);
-//
-//        ArrayAdapter itemAdapter = ArrayAdapter.createFromResource(this, R.array.game, android.R.layout.simple_spinner_dropdown_item);
-//        itemAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        spinner.setAdapter(itemAdapter);
-//
-//        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) { }
-//        });
-
-        String[] GAMES = new String[] {"전체", "가위바위보", "탁구"};
+        /* dropdown 설정 */
+        String[] Games = getResources().getStringArray(R.array.game);
 
         textInputLayout = findViewById(R.id.dateFilterContainer);
         autoCompleteTextview = findViewById(R.id.datesFilterSpinner);
 
-        ArrayAdapter<String> itemAdapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_dropdown_item_1line, GAMES);
+        ArrayAdapter<String> itemAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, Games);
         autoCompleteTextview.setAdapter(itemAdapter);
+        autoCompleteTextview.setDropDownBackgroundDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.bg_dropdown, null));
 
         autoCompleteTextview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

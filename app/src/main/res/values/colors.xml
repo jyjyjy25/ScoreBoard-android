@@ -13,7 +13,8 @@
     <color name="MainColorTertiary">#FFB3D3AE</color>
     <color name="SubColorPrimary">#FF445EA1</color>
     <color name="SubColorSecondary">#FF9CBEDA</color>
-    <color name="TextColorPrimary">#FF222222</color>
-    <color name="TextColorSecondary">#FF666666</color>
-    <color name="TextColorTertiary">#FF999999</color>
+    <color name="MainTextColorPrimary">#FF222222</color>
+    <color name="MainTextColorSecondary">#FF666666</color>
+    <color name="MainTextColorTertiary">#FF999999</color>
+    <color name="SubTextColorPrimary">#FF255950</color>
 </resources>

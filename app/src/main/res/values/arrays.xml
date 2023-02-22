@@ -5,6 +5,12 @@
         <item> 전체 </item>
         <item> 가위바위보 </item>
         <item> 탁구 </item>
+        <item> 볼링 </item>
+        <item> 테니스 </item>
+        <item> 유도 </item>
+        <item> 배드민턴 </item>
+        <item> 골프 </item>
+
     </string-array>
 
 </resources>

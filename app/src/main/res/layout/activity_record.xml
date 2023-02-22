@@ -50,7 +50,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/spinner_background"
+            android:background="@drawable/bg_dropdown"
             app:boxCornerRadiusBottomEnd="20dp"
             app:boxCornerRadiusBottomStart="20dp"
             app:boxCornerRadiusTopEnd="20dp"
@@ -58,13 +58,13 @@
             app:boxStrokeWidth="0dp"
             app:boxStrokeWidthFocused="0dp"
             app:endIconDrawable ="@drawable/arrow_resize"
-            app:endIconTint ="#255950">
+            app:endIconTint ="@color/SubTextColorPrimary">
 
             <AutoCompleteTextView
                 android:id="@+id/datesFilterSpinner"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:dropDownSelector="@drawable/spinner_background"
+                android:dropDownSelector="@drawable/bg_dropdown"
                 android:ellipsize="end"
                 android:inputType="none"
                 android:maxLines="1"
@@ -73,9 +73,12 @@
                 android:singleLine="true"
                 android:text="전체"
                 android:textAlignment="center"
-                android:textColor="#255950"/>
+                android:textColor="@color/SubTextColorPrimary"
+                android:background="@drawable/bg_dropdown"
+                app:simpleItems="@array/game"/>
 
         </com.google.android.material.textfield.TextInputLayout>
+
 
         <View
             android:layout_width="wrap_content"
@@ -87,7 +90,7 @@
             android:layout_height="match_parent">
 
             <View
-                android:layout_width="135dp"
+                android:layout_width="115dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/tab_sort_style"/>
 
@@ -108,12 +111,12 @@
                 <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="오름차순"/>
+                    android:text="날짜순"/>
 
                 <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="내림차순"/>
+                    android:text="게임순"/>
 
             </com.google.android.material.tabs.TabLayout>
 

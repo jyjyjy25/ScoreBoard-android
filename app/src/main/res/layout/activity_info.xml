@@ -32,7 +32,7 @@
         android:background="@android:color/background_light"
         app:tabMode="fixed"
         app:tabGravity="fill"
-        app:tabTextColor="@color/TextColorSecondary"
+        app:tabTextColor="@color/MainTextColorSecondary"
         app:tabSelectedTextColor="@color/MainColorPrimary"
         app:tabIndicatorColor="@color/MainColorPrimary">
 
