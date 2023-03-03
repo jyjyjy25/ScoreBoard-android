@@ -14,9 +14,9 @@
 
 ### 2. 게임/유저/점수 관리
 <div align="center>
-  <img width="359" alt="image" src="https://user-images.githubusercontent.com/110277768/222734786-4a143ef1-6148-4fc1-8dab-d42db5b73e77.png">
-  <img width="362" alt="image" src="https://user-images.githubusercontent.com/110277768/222734892-c5ee813d-edde-43e8-9bc9-918bafb42181.png">
-  <img width="353" alt="image" src="https://user-images.githubusercontent.com/110277768/222734241-50baa568-4ad7-4ca6-8c25-558700f786a8.png">
+  <img alt="image" src="https://user-images.githubusercontent.com/110277768/222734786-4a143ef1-6148-4fc1-8dab-d42db5b73e77.png" width="20%" height="30%">
+  <img alt="image" src="https://user-images.githubusercontent.com/110277768/222734892-c5ee813d-edde-43e8-9bc9-918bafb42181.png" width="20%" height="30%">
+  <img alt="image" src="https://user-images.githubusercontent.com/110277768/222734241-50baa568-4ad7-4ca6-8c25-558700f786a8.png" width="20%" height="30%">
 </div>
 게임/유저/점수에 대한 추가와 수정이 가능하다.
 
