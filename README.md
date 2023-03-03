@@ -10,7 +10,7 @@
   <img alt="image" src="https://user-images.githubusercontent.com/110277768/222738853-3126a9e0-ca5f-4775-967f-e7fc5ed5a10d.png" width="20%" height="30%">
   <img alt="image" src="https://user-images.githubusercontent.com/110277768/222738800-126f5475-2da6-487a-b4db-0e63cc96b16d.png" width="20%" height="30%">
 </div>
-플레이한 게임의 날짜, 게임, 유저, 점수를 입력하여 저장할 수 있다.
+플레이한 경기의 날짜, 게임, 유저, 점수를 입력하여 저장할 수 있다.
 
 ### 2. 게임/유저/점수 관리
 <div>
