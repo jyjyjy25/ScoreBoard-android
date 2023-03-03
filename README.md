@@ -1,5 +1,7 @@
 # 플레이한 게임의 매치 점수를 저장하는 스코어보드 어플
-<img src="https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=Android&logoColor=white">
+<div align="center">
+  <img src="https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=Android&logoColor=white">
+</div>
 
 ## 기능
 ### 1. 게임의 결과를 저장/불러오기
