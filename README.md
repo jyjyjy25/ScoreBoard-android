@@ -6,7 +6,7 @@
 ## 기능
 ### 1. 게임의 결과를 저장
 <div align="center">
-  <img alt="image" src="https://user-images.githubusercontent.com/110277768/222734359-aa6290ea-7761-45bd-98d0-cee7286c7b18.png" width="144" height="216">
+  <img alt="image" src="https://user-images.githubusercontent.com/110277768/222734359-aa6290ea-7761-45bd-98d0-cee7286c7b18.png" width="192" height="288">
   <img alt="image" src="https://user-images.githubusercontent.com/110277768/222734475-99b5c562-4ec1-4a11-8a39-93c0dcc7b831.png" width="144" height="216">
   <img alt="image" src="https://user-images.githubusercontent.com/110277768/222734557-41ea08ff-e5ef-4117-9895-9af8308dc27b.png" width="144" height="216">
 </div>
